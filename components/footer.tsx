@@ -24,7 +24,7 @@ const socialLinks = [
 const navLinks = [
   { href: "/about", label: "About" },
   { href: "/circle", label: "The Circle" },
-  { href: "/five", label: "FIVE" },
+  { href: "/mslm", label: "MSLM" },
   { href: "/muslim-texas", label: "Muslim Texas" },
   { href: "/saudi", label: "Saudi Journey" },
   { href: "/partnerships", label: "Partnerships" },
@@ -38,7 +38,7 @@ const legalLinks = [
 ]
 
 const externalLinks = [
-  { href: "https://candace-ashley-s-school.teachable.com/", label: "FIVE Course", external: true },
+  { href: "https://candace-ashley-s-school.teachable.com/", label: "Prayer Course", external: true },
   { href: "https://www.mslmcollective.com/", label: "MSLM Shop", external: true },
   { href: "https://podcasts.apple.com/", label: "Podcast", external: true },
 ]
