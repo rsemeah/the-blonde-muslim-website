@@ -9,10 +9,10 @@ import { InstagramIcon, TikTokIcon, YouTubeIcon, VerifiedBadge } from "./social-
 const navLinks = [
   { href: "/about", label: "About" },
   { href: "/circle", label: "The Circle" },
-  { href: "/mslm", label: "MSLM" },
+  { href: "/five", label: "FIVE" },
   { href: "/muslim-texas", label: "Muslim Texas" },
+  { href: "/saudi", label: "Saudi Journey" },
   { href: "/partnerships", label: "Partnerships" },
-  { href: "/vision", label: "Vision" },
 ]
 
 export function Navigation() {
