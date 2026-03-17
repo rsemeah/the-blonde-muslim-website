@@ -1,11 +1,9 @@
 "use client"
 
 import { useState } from "react"
-import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
-import { Field, FieldGroup, FieldLabel } from "@/components/ui/field"
 import { Instagram, Youtube } from "lucide-react"
 
 function TikTokIcon({ className }: { className?: string }) {
@@ -21,8 +19,8 @@ const inquiryTypes = [
   "Muslim Texas Feature",
   "Event Appearance",
   "Brand Ambassador",
-  "Trade Show",
-  "Podcast",
+  "Speaking Engagement",
+  "The Circle",
   "Other",
 ]
 
@@ -43,25 +41,31 @@ export function ContactSection() {
   }
 
   return (
-    <section id="contact" className="bg-primary py-20 text-primary-foreground lg:py-28">
-      <div className="mx-auto max-w-7xl px-6">
-        <div className="grid gap-12 lg:grid-cols-2 lg:gap-16">
+    <section id="contact" className="relative overflow-hidden bg-foreground py-24 text-background lg:py-32">
+      <div className="mx-auto max-w-7xl px-6 lg:px-8">
+        <div className="grid gap-16 lg:grid-cols-2 lg:gap-20">
           {/* Left - Info */}
           <div>
-            <p className="font-sans text-sm uppercase tracking-widest text-accent">
+            <p className="text-[11px] font-medium uppercase tracking-[0.3em] text-accent">
               Get In Touch
             </p>
-            <h2 className="mt-4 font-serif text-4xl font-semibold leading-tight md:text-5xl">
-              Work With<br />Candace
+            <h2 className="mt-4 font-serif text-4xl font-light leading-tight sm:text-5xl lg:text-6xl">
+              {"Let's Create"}
+              <br />
+              <span className="italic">Together</span>
             </h2>
-            <p className="mt-6 font-sans text-lg leading-relaxed text-primary-foreground/90">
-              All inquiries managed within 48 hours. Whether you&apos;re a brand seeking authentic 
-              partnerships or a business wanting to be featured, let&apos;s create something meaningful together.
+
+            <div className="my-10 h-px w-16 bg-accent/40" />
+
+            <p className="max-w-md text-base leading-relaxed text-background/80 lg:text-lg">
+              All inquiries managed within 48 hours. Whether you seek authentic 
+              partnerships or wish to be featured, every collaboration is approached 
+              with intention and care.
             </p>
 
             {/* Social Links */}
-            <div className="mt-10">
-              <p className="mb-4 text-sm uppercase tracking-widest text-primary-foreground/70">
+            <div className="mt-12">
+              <p className="mb-5 text-[11px] font-medium uppercase tracking-[0.2em] text-background/60">
                 Connect
               </p>
               <div className="flex gap-4">
@@ -69,7 +73,7 @@ export function ContactSection() {
                   href="https://instagram.com/theblondemuslim"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex h-12 w-12 items-center justify-center rounded-full bg-primary-foreground/10 transition-colors hover:bg-accent/30"
+                  className="flex h-12 w-12 items-center justify-center border border-background/20 transition-all duration-300 hover:bg-background hover:text-foreground"
                   aria-label="Instagram"
                 >
                   <Instagram className="h-5 w-5" />
@@ -78,7 +82,7 @@ export function ContactSection() {
                   href="https://tiktok.com/@theblondemuslim"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex h-12 w-12 items-center justify-center rounded-full bg-primary-foreground/10 transition-colors hover:bg-accent/30"
+                  className="flex h-12 w-12 items-center justify-center border border-background/20 transition-all duration-300 hover:bg-background hover:text-foreground"
                   aria-label="TikTok"
                 >
                   <TikTokIcon className="h-5 w-5" />
@@ -87,7 +91,7 @@ export function ContactSection() {
                   href="https://youtube.com/@TheBlondeMuslim"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex h-12 w-12 items-center justify-center rounded-full bg-primary-foreground/10 transition-colors hover:bg-accent/30"
+                  className="flex h-12 w-12 items-center justify-center border border-background/20 transition-all duration-300 hover:bg-background hover:text-foreground"
                   aria-label="YouTube"
                 >
                   <Youtube className="h-5 w-5" />
@@ -99,61 +103,69 @@ export function ContactSection() {
           {/* Right - Form */}
           <div>
             {isSubmitted ? (
-              <div className="rounded-lg bg-primary-foreground/10 p-8 text-center ring-1 ring-accent/20">
-                <h3 className="font-serif text-2xl font-semibold">Thank You</h3>
-                <p className="mt-4 text-primary-foreground/80">
-                  Your inquiry has been received. We&apos;ll be in touch within 48 hours, insha&apos;Allah.
+              <div className="border border-background/20 p-10 text-center">
+                <p className="font-serif text-2xl">Thank You</p>
+                <p className="mt-4 text-background/70">
+                  {"Your inquiry has been received. We'll be in touch within 48 hours, insha'Allah."}
                 </p>
-                <Button
+                <button
                   onClick={() => setIsSubmitted(false)}
-                  className="mt-6 bg-accent text-foreground hover:bg-accent/90"
+                  className="mt-8 border border-background/20 px-8 py-3 text-[11px] font-medium uppercase tracking-[0.2em] transition-all duration-300 hover:bg-background hover:text-foreground"
                 >
-                  Send Another Inquiry
-                </Button>
+                  Send Another
+                </button>
               </div>
             ) : (
               <form onSubmit={handleSubmit} className="space-y-6">
-                <FieldGroup className="grid gap-6 sm:grid-cols-2">
-                  <Field>
-                    <FieldLabel className="text-primary-foreground/80">Name</FieldLabel>
+                <div className="grid gap-6 sm:grid-cols-2">
+                  <div>
+                    <label className="mb-2 block text-[11px] font-medium uppercase tracking-[0.15em] text-background/70">
+                      Name
+                    </label>
                     <Input
                       value={formData.name}
                       onChange={(e) => setFormData({ ...formData, name: e.target.value })}
                       required
-                      className="border-primary-foreground/20 bg-primary-foreground/10 text-primary-foreground placeholder:text-primary-foreground/50"
+                      className="border-background/20 bg-transparent text-background placeholder:text-background/40 focus:border-background"
                       placeholder="Your name"
                     />
-                  </Field>
-                  <Field>
-                    <FieldLabel className="text-primary-foreground/80">Email</FieldLabel>
+                  </div>
+                  <div>
+                    <label className="mb-2 block text-[11px] font-medium uppercase tracking-[0.15em] text-background/70">
+                      Email
+                    </label>
                     <Input
                       type="email"
                       value={formData.email}
                       onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                       required
-                      className="border-primary-foreground/20 bg-primary-foreground/10 text-primary-foreground placeholder:text-primary-foreground/50"
+                      className="border-background/20 bg-transparent text-background placeholder:text-background/40 focus:border-background"
                       placeholder="your@email.com"
                     />
-                  </Field>
-                </FieldGroup>
+                  </div>
+                </div>
 
-                <FieldGroup className="grid gap-6 sm:grid-cols-2">
-                  <Field>
-                    <FieldLabel className="text-primary-foreground/80">Brand / Business Name</FieldLabel>
+                <div className="grid gap-6 sm:grid-cols-2">
+                  <div>
+                    <label className="mb-2 block text-[11px] font-medium uppercase tracking-[0.15em] text-background/70">
+                      Brand / Business
+                    </label>
                     <Input
                       value={formData.business}
                       onChange={(e) => setFormData({ ...formData, business: e.target.value })}
-                      className="border-primary-foreground/20 bg-primary-foreground/10 text-primary-foreground placeholder:text-primary-foreground/50"
+                      className="border-background/20 bg-transparent text-background placeholder:text-background/40 focus:border-background"
                       placeholder="Company name"
                     />
-                  </Field>
-                  <Field>
-                    <FieldLabel className="text-primary-foreground/80">Inquiry Type</FieldLabel>
+                  </div>
+                  <div>
+                    <label className="mb-2 block text-[11px] font-medium uppercase tracking-[0.15em] text-background/70">
+                      Inquiry Type
+                    </label>
                     <Select
                       value={formData.inquiryType}
                       onValueChange={(value) => setFormData({ ...formData, inquiryType: value })}
                     >
-                      <SelectTrigger className="border-primary-foreground/20 bg-primary-foreground/10 text-primary-foreground">
+                      <SelectTrigger className="border-background/20 bg-transparent text-background">
                         <SelectValue placeholder="Select type" />
                       </SelectTrigger>
                       <SelectContent>
@@ -164,28 +176,29 @@ export function ContactSection() {
                         ))}
                       </SelectContent>
                     </Select>
-                  </Field>
-                </FieldGroup>
+                  </div>
+                </div>
 
-                <Field>
-                  <FieldLabel className="text-primary-foreground/80">Message</FieldLabel>
+                <div>
+                  <label className="mb-2 block text-[11px] font-medium uppercase tracking-[0.15em] text-background/70">
+                    Message
+                  </label>
                   <Textarea
                     value={formData.message}
                     onChange={(e) => setFormData({ ...formData, message: e.target.value })}
                     required
                     rows={5}
-                    className="border-primary-foreground/20 bg-primary-foreground/10 text-primary-foreground placeholder:text-primary-foreground/50"
+                    className="border-background/20 bg-transparent text-background placeholder:text-background/40 focus:border-background"
                     placeholder="Tell us about your project or inquiry..."
                   />
-                </Field>
+                </div>
 
-                <Button
+                <button
                   type="submit"
-                  size="lg"
-                  className="w-full bg-accent text-foreground hover:bg-accent/90 sm:w-auto"
+                  className="border border-background bg-background px-10 py-4 text-[11px] font-medium uppercase tracking-[0.2em] text-foreground transition-all duration-300 hover:bg-transparent hover:text-background"
                 >
                   Send Inquiry
-                </Button>
+                </button>
               </form>
             )}
           </div>

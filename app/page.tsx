@@ -1,6 +1,7 @@
 import { Navigation } from "@/components/navigation"
 import { HeroSection } from "@/components/hero-section"
-import { PhilanthropySection } from "@/components/philanthropy-section"
+import { AboutSection } from "@/components/about-section"
+import { CircleSection } from "@/components/circle-section"
 import { MuslimTexasSection } from "@/components/muslim-texas-section"
 import { PartnershipsSection } from "@/components/partnerships-section"
 import { VisionSection } from "@/components/vision-section"
@@ -12,7 +13,8 @@ export default function Home() {
     <main className="min-h-screen">
       <Navigation />
       <HeroSection />
-      <PhilanthropySection />
+      <AboutSection />
+      <CircleSection />
       <MuslimTexasSection />
       <PartnershipsSection />
       <VisionSection />
