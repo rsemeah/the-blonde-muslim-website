@@ -1,7 +1,9 @@
 import { Navigation } from "@/components/navigation"
 import { Footer } from "@/components/footer"
 import { VideoFeature } from "@/components/video-feature"
+import { CircleJoinForm } from "@/components/circle-join-form"
 import Link from "next/link"
+import { Check, Heart, Sparkles, Users, Calendar, Lock } from "lucide-react"
 
 export const metadata = {
   title: "The Circle | The Blonde Muslim",
@@ -37,7 +39,7 @@ export default function CirclePage() {
         
         <div className="relative z-10 mx-auto max-w-7xl px-6 lg:px-8">
           <div className="flex min-h-screen flex-col items-center justify-center py-24 text-center">
-            {/* Crescent Moon - Madinah blue accent */}
+            {/* Crescent Moon */}
             <CrescentMoon className="h-12 w-12 text-sky-blue" />
             
             <h1 className="mt-8 font-serif text-5xl font-light text-background sm:text-6xl lg:text-7xl">
@@ -45,8 +47,8 @@ export default function CirclePage() {
             </h1>
             
             <p className="mt-6 max-w-xl text-lg leading-relaxed text-background/80">
-              A sacred space for Muslim women to connect, reflect, and grow together. 
-              Not therapy. Not religious authority. Simply community.
+              A private-feeling community for Muslim women focused on growth, lifestyle, and faith.
+              Not therapy. Not religious authority. Simply sisterhood.
             </p>
 
             <div className="mt-10 h-px w-24 bg-madinah-blue/50" />
@@ -58,58 +60,143 @@ export default function CirclePage() {
         </div>
       </section>
 
-      {/* What The Circle Is */}
+      {/* What It Is - Clear Explanation */}
       <section className="bg-background py-24 lg:py-32">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
-          <div className="mx-auto max-w-3xl text-center">
-            <p className="text-[11px] font-medium uppercase tracking-[0.3em] text-muted-foreground">
-              What It Is
-            </p>
-            <h2 className="mt-4 font-serif text-4xl text-foreground sm:text-5xl">
-              A Space for Belonging
-            </h2>
-            <p className="mt-6 text-lg leading-relaxed text-muted-foreground">
-              The Circle is an intentional gathering space where Muslim women can come together 
-              for conversation, support, reflection, and genuine connection.
-            </p>
+          <div className="grid gap-16 lg:grid-cols-2 lg:gap-24">
+            {/* Left - What It Is */}
+            <div>
+              <p className="text-[11px] font-medium uppercase tracking-[0.3em] text-muted-foreground">
+                What It Is
+              </p>
+              <h2 className="mt-4 font-serif text-4xl text-foreground sm:text-5xl">
+                A Space for Belonging
+              </h2>
+              <p className="mt-6 text-lg leading-relaxed text-muted-foreground">
+                The Circle is an intentional gathering space where Muslim women can come together 
+                for conversation, support, reflection, and genuine connection. It&apos;s a community 
+                built on trust, where you can show up as your authentic self.
+              </p>
+              
+              <div className="mt-10 space-y-6">
+                <div className="flex items-start gap-4">
+                  <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-secondary">
+                    <Heart className="h-5 w-5 text-accent" />
+                  </div>
+                  <div>
+                    <h3 className="font-serif text-lg text-foreground">Authentic Connection</h3>
+                    <p className="mt-1 text-muted-foreground">Real conversations with sisters who understand your journey.</p>
+                  </div>
+                </div>
+                <div className="flex items-start gap-4">
+                  <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-secondary">
+                    <Sparkles className="h-5 w-5 text-accent" />
+                  </div>
+                  <div>
+                    <h3 className="font-serif text-lg text-foreground">Intentional Growth</h3>
+                    <p className="mt-1 text-muted-foreground">Encouragement to become the woman Allah created you to be.</p>
+                  </div>
+                </div>
+                <div className="flex items-start gap-4">
+                  <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-secondary">
+                    <Lock className="h-5 w-5 text-accent" />
+                  </div>
+                  <div>
+                    <h3 className="font-serif text-lg text-foreground">Safe Space</h3>
+                    <p className="mt-1 text-muted-foreground">A soft place to land when life feels heavy or uncertain.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            
+            {/* Right - Who It's For */}
+            <div className="bg-secondary p-10 lg:p-12">
+              <p className="text-[11px] font-medium uppercase tracking-[0.3em] text-muted-foreground">
+                Who It&apos;s For
+              </p>
+              <h2 className="mt-4 font-serif text-3xl text-foreground">
+                Muslim Women Seeking...
+              </h2>
+              
+              <ul className="mt-8 space-y-4">
+                <li className="flex items-center gap-3">
+                  <Check className="h-5 w-5 text-accent" />
+                  <span className="text-foreground">Connection with like-minded sisters</span>
+                </li>
+                <li className="flex items-center gap-3">
+                  <Check className="h-5 w-5 text-accent" />
+                  <span className="text-foreground">Alignment in faith and lifestyle</span>
+                </li>
+                <li className="flex items-center gap-3">
+                  <Check className="h-5 w-5 text-accent" />
+                  <span className="text-foreground">Intentional living and growth</span>
+                </li>
+                <li className="flex items-center gap-3">
+                  <Check className="h-5 w-5 text-accent" />
+                  <span className="text-foreground">A judgment-free space to be yourself</span>
+                </li>
+                <li className="flex items-center gap-3">
+                  <Check className="h-5 w-5 text-accent" />
+                  <span className="text-foreground">Conversations that go beyond surface level</span>
+                </li>
+              </ul>
+              
+              <p className="mt-8 text-sm italic text-muted-foreground">
+                Whether you&apos;re a revert, born Muslim, new to the area, or simply seeking deeper 
+                connection—you belong here.
+              </p>
+            </div>
           </div>
+        </div>
+      </section>
 
-          {/* Pillars */}
-          <div className="mt-20 grid gap-12 sm:grid-cols-2 lg:grid-cols-4">
+      {/* What You Get */}
+      <section className="bg-foreground py-24 text-background lg:py-32">
+        <div className="mx-auto max-w-7xl px-6 lg:px-8">
+          <div className="text-center">
+            <p className="text-[11px] font-medium uppercase tracking-[0.3em] text-background/60">
+              Member Benefits
+            </p>
+            <h2 className="mt-4 font-serif text-4xl text-background sm:text-5xl">
+              What You Get
+            </h2>
+          </div>
+          
+          <div className="mt-16 grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
             <div className="text-center">
-              <div className="mx-auto flex h-16 w-16 items-center justify-center rounded-full bg-secondary">
-                <CrescentMoon className="h-6 w-6 text-accent" />
+              <div className="mx-auto flex h-16 w-16 items-center justify-center rounded-full bg-background/10">
+                <Sparkles className="h-7 w-7 text-accent" />
               </div>
-              <h3 className="mt-6 font-serif text-xl text-foreground">Reflection</h3>
-              <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
-                Space to pause, contemplate, and reconnect with what matters most.
+              <h3 className="mt-6 font-serif text-xl text-background">Exclusive Content</h3>
+              <p className="mt-3 text-sm leading-relaxed text-background/70">
+                Access to content, reflections, and conversations not shared anywhere else.
               </p>
             </div>
             <div className="text-center">
-              <div className="mx-auto flex h-16 w-16 items-center justify-center rounded-full bg-secondary">
-                <CrescentMoon className="h-6 w-6 text-accent" />
+              <div className="mx-auto flex h-16 w-16 items-center justify-center rounded-full bg-background/10">
+                <Calendar className="h-7 w-7 text-accent" />
               </div>
-              <h3 className="mt-6 font-serif text-xl text-foreground">Connection</h3>
-              <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
-                Building genuine bonds with sisters who understand your journey.
+              <h3 className="mt-6 font-serif text-xl text-background">Early Access</h3>
+              <p className="mt-3 text-sm leading-relaxed text-background/70">
+                First to know about events, experiences, and new opportunities.
               </p>
             </div>
             <div className="text-center">
-              <div className="mx-auto flex h-16 w-16 items-center justify-center rounded-full bg-secondary">
-                <CrescentMoon className="h-6 w-6 text-accent" />
+              <div className="mx-auto flex h-16 w-16 items-center justify-center rounded-full bg-background/10">
+                <Users className="h-7 w-7 text-accent" />
               </div>
-              <h3 className="mt-6 font-serif text-xl text-foreground">Support</h3>
-              <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
-                A soft place to land when life feels heavy or uncertain.
+              <h3 className="mt-6 font-serif text-xl text-background">Community</h3>
+              <p className="mt-3 text-sm leading-relaxed text-background/70">
+                Private space to connect with other Circle members and build lasting friendships.
               </p>
             </div>
             <div className="text-center">
-              <div className="mx-auto flex h-16 w-16 items-center justify-center rounded-full bg-secondary">
-                <CrescentMoon className="h-6 w-6 text-accent" />
+              <div className="mx-auto flex h-16 w-16 items-center justify-center rounded-full bg-background/10">
+                <Heart className="h-7 w-7 text-accent" />
               </div>
-              <h3 className="mt-6 font-serif text-xl text-foreground">Growth</h3>
-              <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
-                Encouragement to become the woman Allah created you to be.
+              <h3 className="mt-6 font-serif text-xl text-background">Future Events</h3>
+              <p className="mt-3 text-sm leading-relaxed text-background/70">
+                Invitations to intimate gatherings, virtual and in-person meetups.
               </p>
             </div>
           </div>
@@ -177,22 +264,29 @@ export default function CirclePage() {
         </div>
       </section>
 
-      {/* CTA */}
-      <section className="bg-foreground py-24 text-background lg:py-32">
-        <div className="mx-auto max-w-3xl px-6 text-center lg:px-8">
-          <CrescentMoon className="mx-auto h-10 w-10 text-accent/60" />
-          <h2 className="mt-8 font-serif text-4xl text-background sm:text-5xl">
-            Join The Circle
-          </h2>
-          <p className="mt-6 text-lg text-background/80">
-            Express your interest and be the first to know about upcoming gatherings.
-          </p>
-          <Link
-            href="/contact"
-            className="mt-10 inline-flex items-center justify-center bg-background px-10 py-5 text-[11px] font-medium uppercase tracking-[0.2em] text-foreground transition-all duration-300 hover:bg-background/90"
-          >
-            Express Interest
-          </Link>
+      {/* Join Form CTA */}
+      <section className="bg-secondary py-24 lg:py-32">
+        <div className="mx-auto max-w-7xl px-6 lg:px-8">
+          <div className="grid items-center gap-12 lg:grid-cols-2 lg:gap-24">
+            <div>
+              <CrescentMoon className="h-10 w-10 text-accent" />
+              <h2 className="mt-6 font-serif text-4xl text-foreground sm:text-5xl">
+                Join The Circle
+              </h2>
+              <p className="mt-6 text-lg text-muted-foreground">
+                Express your interest and be among the first to know about upcoming gatherings, 
+                exclusive content, and community events.
+              </p>
+              <p className="mt-4 text-sm italic text-muted-foreground">
+                Joining is free. This is about connection, not commerce.
+              </p>
+            </div>
+            
+            {/* Join Form */}
+            <div className="bg-background p-8 lg:p-10">
+              <CircleJoinForm />
+            </div>
+          </div>
         </div>
       </section>
 

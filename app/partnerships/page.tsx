@@ -1,6 +1,7 @@
 import { Navigation } from "@/components/navigation"
 import { Footer } from "@/components/footer"
 import { VideoFeature } from "@/components/video-feature"
+import { PartnershipForm } from "@/components/partnership-form"
 import Link from "next/link"
 import { ArrowRight, Camera, Mic, Users, Sparkles, Heart, Globe } from "lucide-react"
 
@@ -218,22 +219,38 @@ export default function PartnershipsPage() {
         </div>
       </section>
 
-      {/* CTA */}
+      {/* CTA with Form */}
       <section className="bg-foreground py-24 text-background lg:py-32">
-        <div className="mx-auto max-w-3xl px-6 text-center lg:px-8">
-          <h2 className="font-serif text-4xl text-background sm:text-5xl">
-            Let&apos;s Create Together
-          </h2>
-          <p className="mt-6 text-lg text-background/80">
-            Ready to discuss a partnership? I&apos;d love to hear about your brand 
-            and explore how we can work together.
-          </p>
-          <Link
-            href="/contact"
-            className="mt-10 inline-flex items-center justify-center bg-background px-10 py-5 text-[11px] font-medium uppercase tracking-[0.2em] text-foreground transition-all duration-300 hover:bg-background/90"
-          >
-            Start a Conversation
-          </Link>
+        <div className="mx-auto max-w-7xl px-6 lg:px-8">
+          <div className="grid items-center gap-12 lg:grid-cols-2 lg:gap-24">
+            <div>
+              <h2 className="font-serif text-4xl text-background sm:text-5xl">
+                Start a Partnership
+              </h2>
+              <p className="mt-6 text-lg text-background/80">
+                Ready to discuss a collaboration? Fill out this form and I&apos;ll 
+                get back to you within 48 hours.
+              </p>
+              <div className="mt-8 space-y-4 text-background/70">
+                <p className="flex items-center gap-3">
+                  <span className="h-1.5 w-1.5 rounded-full bg-accent" />
+                  Typical response time: 24-48 hours
+                </p>
+                <p className="flex items-center gap-3">
+                  <span className="h-1.5 w-1.5 rounded-full bg-accent" />
+                  All inquiries reviewed personally
+                </p>
+                <p className="flex items-center gap-3">
+                  <span className="h-1.5 w-1.5 rounded-full bg-accent" />
+                  Media kit available upon request
+                </p>
+              </div>
+            </div>
+            
+            <div className="bg-background p-8 lg:p-10">
+              <PartnershipForm />
+            </div>
+          </div>
         </div>
       </section>
 
