@@ -2,19 +2,21 @@
 
 import { useState, useEffect } from "react"
 import Link from "next/link"
+import { usePathname } from "next/navigation"
 import { Menu, X } from "lucide-react"
 
 const navLinks = [
-  { href: "#about", label: "About" },
-  { href: "#circle", label: "The Circle" },
-  { href: "#muslim-texas", label: "Muslim Texas" },
-  { href: "#partnerships", label: "Partnerships" },
-  { href: "#vision", label: "Vision" },
+  { href: "/about", label: "About" },
+  { href: "/circle", label: "The Circle" },
+  { href: "/muslim-texas", label: "Muslim Texas" },
+  { href: "/partnerships", label: "Partnerships" },
+  { href: "/vision", label: "Vision" },
 ]
 
 export function Navigation() {
   const [isScrolled, setIsScrolled] = useState(false)
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
+  const pathname = usePathname()
 
   useEffect(() => {
     const handleScroll = () => {
@@ -49,13 +51,15 @@ export function Navigation() {
                 <Link
                   key={link.href}
                   href={link.href}
-                  className="text-[11px] font-medium uppercase tracking-[0.2em] text-muted-foreground transition-colors duration-300 hover:text-foreground"
+                  className={`text-[11px] font-medium uppercase tracking-[0.2em] transition-colors duration-300 hover:text-foreground ${
+                    pathname === link.href ? "text-foreground" : "text-muted-foreground"
+                  }`}
                 >
                   {link.label}
                 </Link>
               ))}
               <Link
-                href="#contact"
+                href="/contact"
                 className="border border-foreground/20 px-6 py-2.5 text-[11px] font-medium uppercase tracking-[0.2em] text-foreground transition-all duration-300 hover:bg-foreground hover:text-background"
               >
                 Connect
@@ -89,7 +93,9 @@ export function Navigation() {
             <Link
               key={link.href}
               href={link.href}
-              className="font-serif text-3xl text-foreground transition-all duration-300 hover:text-accent"
+              className={`font-serif text-3xl transition-all duration-300 hover:text-accent ${
+                pathname === link.href ? "text-foreground" : "text-foreground/70"
+              }`}
               onClick={() => setIsMobileMenuOpen(false)}
               style={{ 
                 opacity: isMobileMenuOpen ? 1 : 0,
@@ -101,7 +107,7 @@ export function Navigation() {
             </Link>
           ))}
           <Link
-            href="#contact"
+            href="/contact"
             className="mt-4 border border-foreground/20 px-8 py-3 text-[11px] font-medium uppercase tracking-[0.2em] text-foreground transition-all duration-300 hover:bg-foreground hover:text-background"
             onClick={() => setIsMobileMenuOpen(false)}
           >
