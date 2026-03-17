@@ -1,14 +1,22 @@
 import type { Metadata } from 'next'
-import { Geist, Geist_Mono } from 'next/font/google'
+import { Cormorant_Garamond, Inter } from 'next/font/google'
 import { Analytics } from '@vercel/analytics/next'
 import './globals.css'
 
-const _geist = Geist({ subsets: ["latin"] });
-const _geistMono = Geist_Mono({ subsets: ["latin"] });
+const cormorant = Cormorant_Garamond({ 
+  subsets: ["latin"],
+  weight: ["400", "500", "600", "700"],
+  variable: "--font-cormorant"
+})
+
+const inter = Inter({ 
+  subsets: ["latin"],
+  variable: "--font-inter"
+})
 
 export const metadata: Metadata = {
-  title: 'v0 App',
-  description: 'Created with v0',
+  title: 'The Blonde Muslim | Faith. Culture. Community.',
+  description: 'A space for Muslim women to connect, grow, and experience faith, lifestyle, and community. Authentic storytelling at the intersection of faith, culture, and modern Muslim life.',
   generator: 'v0.app',
   icons: {
     icon: [
@@ -36,7 +44,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className="font-sans antialiased">
+      <body className={`${cormorant.variable} ${inter.variable} font-sans antialiased`}>
         {children}
         <Analytics />
       </body>
