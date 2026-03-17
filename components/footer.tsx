@@ -24,6 +24,7 @@ const socialLinks = [
 const navLinks = [
   { href: "/about", label: "About" },
   { href: "/circle", label: "The Circle" },
+  { href: "/companion", label: "Amina" },
   { href: "/mslm", label: "MSLM" },
   { href: "/muslim-texas", label: "Muslim Texas" },
   { href: "/saudi", label: "Saudi Journey" },

@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import { Cormorant_Garamond, Inter } from 'next/font/google'
 import { Analytics } from '@vercel/analytics/next'
+import { AminaWidget } from '@/components/amina-widget'
 import './globals.css'
 
 const cormorant = Cormorant_Garamond({ 
@@ -46,6 +47,7 @@ export default function RootLayout({
     <html lang="en" data-scroll-behavior="smooth">
       <body className={`${cormorant.variable} ${inter.variable} font-sans antialiased`}>
         {children}
+        <AminaWidget />
         <Analytics />
       </body>
     </html>
