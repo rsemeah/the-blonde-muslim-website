@@ -12,15 +12,29 @@ interface VideoItemProps {
 
 function VideoItem({ src, title, subtitle, featured, badge }: VideoItemProps) {
   const videoRef = useRef<HTMLVideoElement>(null)
+  const playPromiseRef = useRef<Promise<void> | undefined>(undefined)
 
   const handleMouseEnter = () => {
-    videoRef.current?.play()
+    if (videoRef.current) {
+      playPromiseRef.current = videoRef.current.play()
+      playPromiseRef.current?.catch(() => {})
+    }
   }
 
   const handleMouseLeave = () => {
     if (videoRef.current) {
-      videoRef.current.pause()
-      videoRef.current.currentTime = 0
+      // Wait for play() promise to resolve before pausing
+      if (playPromiseRef.current !== undefined) {
+        playPromiseRef.current.then(() => {
+          if (videoRef.current) {
+            videoRef.current.pause()
+            videoRef.current.currentTime = 0
+          }
+        }).catch(() => {})
+      } else {
+        videoRef.current.pause()
+        videoRef.current.currentTime = 0
+      }
     }
   }
 
