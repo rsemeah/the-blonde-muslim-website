@@ -238,6 +238,61 @@ export default function Home() {
         </div>
       </section>
 
+      {/* MSLM Brand Section */}
+      <section className="bg-foreground py-24 lg:py-32">
+        <div className="mx-auto max-w-7xl px-6 lg:px-8">
+          <div className="grid items-center gap-12 lg:grid-cols-2 lg:gap-20">
+            {/* Content */}
+            <div className="text-background">
+              <p className="text-[11px] font-medium uppercase tracking-[0.3em] text-background/60">
+                Her Brand
+              </p>
+              <h2 className="mt-4 font-serif text-5xl text-background lg:text-6xl">
+                MSLM
+              </h2>
+              <p className="mt-2 font-serif text-xl italic text-accent">The Collective</p>
+              <p className="mt-6 max-w-md text-lg leading-relaxed text-background/80">
+                Tools for deeper connection. Products designed to help Muslim women 
+                have the conversations that matter most.
+              </p>
+              <div className="mt-8 flex flex-wrap gap-4">
+                <Link
+                  href="/mslm"
+                  className="inline-flex items-center gap-3 bg-background px-8 py-4 text-[11px] font-medium uppercase tracking-[0.2em] text-foreground transition-all hover:bg-accent hover:text-foreground"
+                >
+                  Explore MSLM
+                  <ArrowRight className="h-4 w-4" />
+                </Link>
+                <Link
+                  href="https://www.mslmcollective.com/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-3 border border-background/30 px-8 py-4 text-[11px] font-medium uppercase tracking-[0.2em] text-background transition-all hover:bg-background/10"
+                >
+                  Shop Now
+                </Link>
+              </div>
+            </div>
+            
+            {/* Image */}
+            <div className="relative">
+              <div className="relative aspect-square overflow-hidden">
+                <Image
+                  src="/images/mslm-cards.png"
+                  alt="MSLM The Heart conversation cards"
+                  fill
+                  className="object-cover"
+                />
+              </div>
+              <div className="absolute -bottom-4 -left-4 bg-accent px-6 py-4">
+                <p className="text-[10px] uppercase tracking-[0.2em] text-foreground">Featured</p>
+                <p className="mt-1 font-serif text-lg text-foreground">The Heart Deck</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Editorial Quote Section */}
       <section className="bg-secondary py-24 lg:py-32">
         <div className="mx-auto max-w-4xl px-6 text-center lg:px-8">
@@ -325,8 +380,160 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Contact CTA */}
+      {/* Video Moments Reel */}
       <section className="bg-background py-24 lg:py-32">
+        <div className="mx-auto max-w-7xl px-6 lg:px-8">
+          <div className="flex items-end justify-between">
+            <div>
+              <p className="text-[11px] font-medium uppercase tracking-[0.3em] text-muted-foreground">
+                In Her World
+              </p>
+              <h2 className="mt-4 font-serif text-4xl text-foreground lg:text-5xl">
+                Moments
+              </h2>
+            </div>
+            <p className="hidden text-sm text-muted-foreground lg:block">
+              Daily glimpses into faith, beauty, and connection
+            </p>
+          </div>
+
+          {/* Video Grid */}
+          <div className="mt-16 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+            {/* Featured - Muslim Texas */}
+            <div className="group relative aspect-[9/16] overflow-hidden sm:col-span-2 sm:row-span-2">
+              <video
+                className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
+                muted
+                loop
+                playsInline
+                onMouseEnter={(e) => e.currentTarget.play()}
+                onMouseLeave={(e) => { e.currentTarget.pause(); e.currentTarget.currentTime = 0; }}
+              >
+                <source src="/videos/texas.mp4" type="video/mp4" />
+              </video>
+              <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent" />
+              <div className="absolute left-4 top-4 bg-accent px-3 py-1.5 text-[9px] font-medium uppercase tracking-[0.2em] text-foreground">
+                Featured Series
+              </div>
+              <div className="absolute bottom-0 left-0 right-0 p-6">
+                <p className="font-serif text-2xl text-white">Muslim Texas</p>
+                <p className="mt-2 text-sm text-white/70">Documentary Series</p>
+              </div>
+            </div>
+
+            {/* Lifestyle */}
+            <div className="group relative aspect-[9/16] overflow-hidden">
+              <video
+                className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
+                muted
+                loop
+                playsInline
+                onMouseEnter={(e) => e.currentTarget.play()}
+                onMouseLeave={(e) => { e.currentTarget.pause(); e.currentTarget.currentTime = 0; }}
+              >
+                <source src="/videos/lifestyle-moments.mp4" type="video/mp4" />
+              </video>
+              <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
+              <div className="absolute bottom-0 left-0 right-0 p-4">
+                <p className="font-serif text-lg text-white">Lifestyle</p>
+              </div>
+            </div>
+
+            {/* Reflections */}
+            <div className="group relative aspect-[9/16] overflow-hidden">
+              <video
+                className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
+                muted
+                loop
+                playsInline
+                onMouseEnter={(e) => e.currentTarget.play()}
+                onMouseLeave={(e) => { e.currentTarget.pause(); e.currentTarget.currentTime = 0; }}
+              >
+                <source src="/videos/reflections.mp4" type="video/mp4" />
+              </video>
+              <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
+              <div className="absolute bottom-0 left-0 right-0 p-4">
+                <p className="font-serif text-lg text-white">Reflections</p>
+              </div>
+            </div>
+
+            {/* Beauty */}
+            <div className="group relative aspect-[9/16] overflow-hidden">
+              <video
+                className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
+                muted
+                loop
+                playsInline
+                onMouseEnter={(e) => e.currentTarget.play()}
+                onMouseLeave={(e) => { e.currentTarget.pause(); e.currentTarget.currentTime = 0; }}
+              >
+                <source src="/videos/beauty.mp4" type="video/mp4" />
+              </video>
+              <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
+              <div className="absolute bottom-0 left-0 right-0 p-4">
+                <p className="font-serif text-lg text-white">Beauty</p>
+              </div>
+            </div>
+
+            {/* Faith */}
+            <div className="group relative aspect-[9/16] overflow-hidden">
+              <video
+                className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
+                muted
+                loop
+                playsInline
+                onMouseEnter={(e) => e.currentTarget.play()}
+                onMouseLeave={(e) => { e.currentTarget.pause(); e.currentTarget.currentTime = 0; }}
+              >
+                <source src="/videos/faith-journey.mp4" type="video/mp4" />
+              </video>
+              <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
+              <div className="absolute bottom-0 left-0 right-0 p-4">
+                <p className="font-serif text-lg text-white">Faith</p>
+              </div>
+            </div>
+          </div>
+
+          {/* Social Follow CTA */}
+          <div className="mt-16 text-center">
+            <p className="text-[11px] font-medium uppercase tracking-[0.3em] text-muted-foreground">
+              Follow Along Everywhere
+            </p>
+            <div className="mt-6 flex flex-wrap items-center justify-center gap-4">
+              <Link
+                href="https://instagram.com/theblondemuslim"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 border border-border px-6 py-3 text-sm transition-all hover:border-foreground hover:bg-foreground hover:text-background"
+              >
+                <InstagramIcon className="h-4 w-4" />
+                <span>Instagram</span>
+              </Link>
+              <Link
+                href="https://tiktok.com/@theblondemuslim"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 border border-border px-6 py-3 text-sm transition-all hover:border-foreground hover:bg-foreground hover:text-background"
+              >
+                <TikTokIcon className="h-4 w-4" />
+                <span>TikTok</span>
+              </Link>
+              <Link
+                href="https://youtube.com/@TheBlondeMuslim"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 border border-border px-6 py-3 text-sm transition-all hover:border-foreground hover:bg-foreground hover:text-background"
+              >
+                <YouTubeIcon className="h-4 w-4" />
+                <span>YouTube</span>
+              </Link>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Contact CTA */}
+      <section className="bg-secondary py-24 lg:py-32">
         <div className="mx-auto max-w-3xl px-6 text-center lg:px-8">
           <h2 className="font-serif text-4xl text-foreground sm:text-5xl">
             Let&apos;s Connect

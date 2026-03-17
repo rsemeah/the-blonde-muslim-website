@@ -24,6 +24,7 @@ const socialLinks = [
 const navLinks = [
   { href: "/about", label: "About" },
   { href: "/circle", label: "The Circle" },
+  { href: "/mslm", label: "MSLM" },
   { href: "/muslim-texas", label: "Muslim Texas" },
   { href: "/partnerships", label: "Partnerships" },
   { href: "/vision", label: "Vision" },
@@ -34,6 +35,11 @@ const legalLinks = [
   { href: "/privacy", label: "Privacy Policy" },
   { href: "/terms", label: "Terms of Use" },
   { href: "/press", label: "Press Kit" },
+]
+
+const externalLinks = [
+  { href: "https://www.mslmcollective.com/", label: "MSLM Shop", external: true },
+  { href: "https://podcasts.apple.com/", label: "Podcast", external: true },
 ]
 
 export function Footer() {
@@ -92,12 +98,25 @@ export function Footer() {
             </ul>
           </div>
 
-          {/* Legal Column */}
+          {/* Ecosystem Column */}
           <div className="lg:col-span-2">
             <p className="text-[11px] font-medium uppercase tracking-[0.2em] text-foreground">
-              Legal
+              Ecosystem
             </p>
             <ul className="mt-6 space-y-4">
+              {externalLinks.map((link) => (
+                <li key={link.href}>
+                  <Link
+                    href={link.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-1 text-sm text-muted-foreground transition-colors duration-300 hover:text-foreground"
+                  >
+                    {link.label}
+                    <span className="text-[10px]">↗</span>
+                  </Link>
+                </li>
+              ))}
               {legalLinks.map((link) => (
                 <li key={link.href}>
                   <Link
