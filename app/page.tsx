@@ -1,9 +1,15 @@
 import { Navigation } from "@/components/navigation"
 import { Footer } from "@/components/footer"
 import { VideoFeature } from "@/components/video-feature"
+import { 
+  InstagramIcon, 
+  TikTokIcon, 
+  YouTubeIcon, 
+  VerifiedBadge 
+} from "@/components/social-icons"
 import Image from "next/image"
 import Link from "next/link"
-import { ArrowRight } from "lucide-react"
+import { ArrowRight, Play, Users, Heart, Globe } from "lucide-react"
 
 export default function Home() {
   return (
@@ -39,7 +45,10 @@ export default function Home() {
               <h1 className="mt-6 font-serif text-5xl font-light leading-[0.95] tracking-tight text-background sm:text-6xl lg:text-7xl xl:text-8xl">
                 The Blonde
                 <br />
-                <span className="italic">Muslim</span>
+                <span className="inline-flex items-center gap-4">
+                  <span className="italic">Muslim</span>
+                  <VerifiedBadge className="h-8 w-8 text-accent lg:h-10 lg:w-10" />
+                </span>
               </h1>
               
               {/* Positioning */}
@@ -65,14 +74,88 @@ export default function Home() {
               </div>
             </div>
 
-            {/* Floating Stats */}
-            <div className="absolute bottom-12 right-6 hidden bg-background/10 backdrop-blur-md px-8 py-6 lg:block lg:right-12">
-              <p className="text-[10px] font-medium uppercase tracking-[0.2em] text-background/60">
-                Combined Reach
+            {/* Floating Stats Panel */}
+            <div className="absolute bottom-12 right-6 hidden bg-background/10 backdrop-blur-md p-6 lg:block lg:right-12">
+              <div className="flex items-center gap-6">
+                <div className="flex items-center gap-3 border-r border-background/20 pr-6">
+                  <InstagramIcon className="h-5 w-5 text-background/70" />
+                  <div>
+                    <p className="font-serif text-2xl text-background">384K</p>
+                    <p className="text-[9px] uppercase tracking-[0.15em] text-background/50">Followers</p>
+                  </div>
+                </div>
+                <div className="flex items-center gap-3 border-r border-background/20 pr-6">
+                  <TikTokIcon className="h-5 w-5 text-background/70" />
+                  <div>
+                    <p className="font-serif text-2xl text-background">197K</p>
+                    <p className="text-[9px] uppercase tracking-[0.15em] text-background/50">Followers</p>
+                  </div>
+                </div>
+                <div className="flex items-center gap-3">
+                  <YouTubeIcon className="h-5 w-5 text-background/70" />
+                  <div>
+                    <p className="font-serif text-2xl text-background">22.5K</p>
+                    <p className="text-[9px] uppercase tracking-[0.15em] text-background/50">Subscribers</p>
+                  </div>
+                </div>
+              </div>
+              <div className="mt-4 border-t border-background/20 pt-4">
+                <p className="text-center text-[10px] font-medium uppercase tracking-[0.2em] text-background/60">
+                  603K+ Combined Reach
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Social Proof / Platform Stats */}
+      <section className="border-b border-border bg-secondary/30 py-12 lg:py-16">
+        <div className="mx-auto max-w-7xl px-6 lg:px-8">
+          <div className="flex flex-col items-center justify-between gap-8 lg:flex-row">
+            {/* As Seen On */}
+            <div className="flex flex-col items-center gap-4 lg:flex-row lg:gap-8">
+              <p className="text-[10px] font-medium uppercase tracking-[0.3em] text-muted-foreground">
+                Trusted Voice In
               </p>
-              <p className="mt-1 font-serif text-4xl text-background">
-                603<span className="text-accent">K</span>+
-              </p>
+              <div className="flex flex-wrap items-center justify-center gap-6 lg:gap-8">
+                <span className="font-serif text-lg text-foreground/60">Muslim Lifestyle</span>
+                <span className="hidden text-muted-foreground/30 lg:block">|</span>
+                <span className="font-serif text-lg text-foreground/60">Faith & Spirituality</span>
+                <span className="hidden text-muted-foreground/30 lg:block">|</span>
+                <span className="font-serif text-lg text-foreground/60">Travel & Culture</span>
+              </div>
+            </div>
+            
+            {/* Platform Icons */}
+            <div className="flex items-center gap-6">
+              <Link
+                href="https://instagram.com/theblondemuslim"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-2 text-muted-foreground transition-colors hover:text-foreground"
+              >
+                <InstagramIcon className="h-5 w-5" />
+                <span className="text-sm font-medium">384K</span>
+              </Link>
+              <Link
+                href="https://tiktok.com/@theblondemuslim"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-2 text-muted-foreground transition-colors hover:text-foreground"
+              >
+                <TikTokIcon className="h-5 w-5" />
+                <span className="text-sm font-medium">197K</span>
+              </Link>
+              <Link
+                href="https://youtube.com/@TheBlondeMuslim"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-2 text-muted-foreground transition-colors hover:text-foreground"
+              >
+                <YouTubeIcon className="h-5 w-5" />
+                <span className="text-sm font-medium">22.5K</span>
+              </Link>
             </div>
           </div>
         </div>

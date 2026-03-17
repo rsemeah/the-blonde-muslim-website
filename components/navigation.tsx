@@ -4,6 +4,7 @@ import { useState, useEffect } from "react"
 import Link from "next/link"
 import { usePathname } from "next/navigation"
 import { Menu, X } from "lucide-react"
+import { InstagramIcon, TikTokIcon, YouTubeIcon, VerifiedBadge } from "./social-icons"
 
 const navLinks = [
   { href: "/about", label: "About" },
@@ -40,9 +41,10 @@ export function Navigation() {
             {/* Logo */}
             <Link 
               href="/" 
-              className="font-serif text-lg tracking-wide text-foreground transition-opacity hover:opacity-70 md:text-xl"
+              className="inline-flex items-center gap-2 font-serif text-lg tracking-wide text-foreground transition-opacity hover:opacity-70 md:text-xl"
             >
               The Blonde Muslim
+              <VerifiedBadge className="h-4 w-4 text-accent" />
             </Link>
 
             {/* Desktop Navigation */}
@@ -113,6 +115,37 @@ export function Navigation() {
           >
             Connect
           </Link>
+          
+          {/* Social Icons in Mobile Menu */}
+          <div className="mt-8 flex items-center gap-4">
+            <Link
+              href="https://instagram.com/theblondemuslim"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex h-10 w-10 items-center justify-center rounded-full border border-foreground/20 text-foreground/70 transition-colors hover:bg-foreground hover:text-background"
+              aria-label="Instagram"
+            >
+              <InstagramIcon className="h-4 w-4" />
+            </Link>
+            <Link
+              href="https://tiktok.com/@theblondemuslim"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex h-10 w-10 items-center justify-center rounded-full border border-foreground/20 text-foreground/70 transition-colors hover:bg-foreground hover:text-background"
+              aria-label="TikTok"
+            >
+              <TikTokIcon className="h-4 w-4" />
+            </Link>
+            <Link
+              href="https://youtube.com/@TheBlondeMuslim"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex h-10 w-10 items-center justify-center rounded-full border border-foreground/20 text-foreground/70 transition-colors hover:bg-foreground hover:text-background"
+              aria-label="YouTube"
+            >
+              <YouTubeIcon className="h-4 w-4" />
+            </Link>
+          </div>
         </div>
       </div>
     </>
