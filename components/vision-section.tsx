@@ -18,10 +18,10 @@ export function VisionSection() {
   }
 
   return (
-    <section id="vision" className="relative overflow-hidden py-20 lg:py-28">
+    <section id="vision" className="relative overflow-hidden bg-secondary py-20 lg:py-28">
       {/* Background decorative arch */}
-      <div className="absolute inset-0 flex items-center justify-center opacity-5">
-        <svg className="h-[800px] w-[800px]" viewBox="0 0 100 100">
+      <div className="absolute inset-0 flex items-center justify-center">
+        <svg className="h-[800px] w-[800px] text-primary/5" viewBox="0 0 100 100">
           <path
             d="M10 90 Q10 10 50 10 Q90 10 90 90"
             fill="none"
@@ -44,7 +44,7 @@ export function VisionSection() {
       </div>
 
       <div className="relative mx-auto max-w-4xl px-6 text-center">
-        <p className="font-sans text-sm uppercase tracking-widest text-accent">
+        <p className="font-sans text-sm uppercase tracking-widest text-primary">
           Coming Soon
         </p>
         <h2 className="mt-4 font-serif text-4xl font-semibold leading-tight text-foreground md:text-5xl">
@@ -59,15 +59,15 @@ export function VisionSection() {
         {/* Vision highlights */}
         <div className="mt-12 flex flex-wrap justify-center gap-8">
           <div className="flex items-center gap-3">
-            <Plane className="h-5 w-5 text-accent" />
+            <Plane className="h-5 w-5 text-primary" />
             <span className="font-sans text-foreground">Saudi Experiences</span>
           </div>
           <div className="flex items-center gap-3">
-            <Heart className="h-5 w-5 text-accent" />
+            <Heart className="h-5 w-5 text-primary" />
             <span className="font-sans text-foreground">Umrah Journeys</span>
           </div>
           <div className="flex items-center gap-3">
-            <Users className="h-5 w-5 text-accent" />
+            <Users className="h-5 w-5 text-primary" />
             <span className="font-sans text-foreground">Sisterhood First</span>
           </div>
         </div>
@@ -75,7 +75,7 @@ export function VisionSection() {
         {/* Waitlist Form */}
         <div className="mx-auto mt-12 max-w-md">
           {isSubmitted ? (
-            <div className="rounded-lg bg-accent/10 p-6">
+            <div className="rounded-lg bg-primary/10 p-6 ring-1 ring-primary/20">
               <p className="font-sans text-foreground">
                 Thank you for joining the waitlist. We&apos;ll be in touch soon, insha&apos;Allah.
               </p>
@@ -90,7 +90,7 @@ export function VisionSection() {
                 required
                 className="flex-1 border-border bg-card"
               />
-              <Button type="submit" className="bg-foreground text-background hover:bg-foreground/90">
+              <Button type="submit" className="bg-primary text-primary-foreground hover:bg-primary/90">
                 Join Waitlist
               </Button>
             </form>

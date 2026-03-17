@@ -37,10 +37,10 @@ const partnerships = [
 
 export function PartnershipsSection() {
   return (
-    <section id="partner" className="bg-secondary py-20 lg:py-28">
+    <section id="partner" className="bg-background py-20 lg:py-28 pattern-islamic">
       <div className="mx-auto max-w-7xl px-6">
         <div className="text-center">
-          <p className="font-sans text-sm uppercase tracking-widest text-accent">
+          <p className="font-sans text-sm uppercase tracking-widest text-primary">
             Opportunities
           </p>
           <h2 className="mt-4 font-serif text-4xl font-semibold text-foreground md:text-5xl">
@@ -55,9 +55,9 @@ export function PartnershipsSection() {
           {partnerships.map((item) => (
             <Card
               key={item.number}
-              className="group border-border bg-card p-8 transition-all hover:border-accent hover:shadow-lg"
+              className="group border-border bg-card p-8 transition-all hover:border-primary hover:shadow-lg"
             >
-              <span className="font-serif text-4xl font-light text-accent/40 transition-colors group-hover:text-accent">
+              <span className="font-serif text-4xl font-light text-primary/40 transition-colors group-hover:text-primary">
                 {item.number}
               </span>
               <h3 className="mt-4 font-serif text-xl font-semibold text-foreground">

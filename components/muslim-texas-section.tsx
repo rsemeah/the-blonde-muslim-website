@@ -40,7 +40,7 @@ export function MuslimTexasSection() {
         <div className="grid gap-12 lg:grid-cols-2 lg:gap-16">
           {/* Left - Content */}
           <div>
-            <p className="font-sans text-sm uppercase tracking-widest text-accent">
+            <p className="font-sans text-sm uppercase tracking-widest text-primary">
               Signature Series
             </p>
             <h2 className="mt-4 font-serif text-4xl font-semibold leading-tight text-foreground md:text-5xl">
@@ -68,7 +68,7 @@ export function MuslimTexasSection() {
               <p className="mb-4 text-sm text-muted-foreground">
                 Features starting at $500 · Bundle pricing available · Ramadan rates seasonal
               </p>
-              <Button asChild className="bg-foreground text-background hover:bg-foreground/90">
+              <Button asChild className="bg-primary text-primary-foreground hover:bg-primary/90">
                 <Link href="#contact">Feature Your Business</Link>
               </Button>
             </div>
@@ -83,10 +83,10 @@ export function MuslimTexasSection() {
               {deliverables.map((item) => (
                 <Card
                   key={item.title}
-                  className="group flex items-center gap-4 border-border bg-card p-5 transition-all hover:border-accent hover:shadow-md"
+                  className="group flex items-center gap-4 border-border bg-card p-5 transition-all hover:border-primary hover:shadow-md"
                 >
-                  <div className="flex h-12 w-12 items-center justify-center rounded-full bg-secondary transition-colors group-hover:bg-accent/10">
-                    <item.icon className="h-5 w-5 text-accent" />
+                  <div className="flex h-12 w-12 items-center justify-center rounded-full bg-primary/10 transition-colors group-hover:bg-primary/20">
+                    <item.icon className="h-5 w-5 text-primary" />
                   </div>
                   <div>
                     <h4 className="font-sans font-semibold text-foreground">{item.title}</h4>

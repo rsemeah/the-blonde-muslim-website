@@ -15,33 +15,48 @@ function TikTokIcon({ className }: { className?: string }) {
 
 export function HeroSection() {
   return (
-    <section className="relative min-h-screen pt-20">
-      {/* Background Pattern */}
-      <div className="pattern-islamic absolute inset-0 opacity-30" />
+    <section className="relative min-h-screen pt-20 overflow-hidden">
+      {/* Paradise Garden Background Image */}
+      <div className="absolute inset-0">
+        <Image
+          src="/images/garden-paradise.jpg"
+          alt=""
+          fill
+          className="object-cover"
+          priority
+        />
+        {/* Overlay for readability */}
+        <div className="absolute inset-0 bg-gradient-to-b from-background/90 via-background/75 to-background" />
+      </div>
       
       <div className="relative mx-auto max-w-7xl px-6 py-16 lg:py-24">
         <div className="grid items-center gap-12 lg:grid-cols-2 lg:gap-16">
           {/* Left Content */}
           <div className="order-2 lg:order-1">
+            {/* Arabic Bismillah */}
+            <p className="font-serif text-lg text-primary/80 mb-2">
+              {"بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ"}
+            </p>
+            
             <h1 className="font-serif text-5xl font-semibold leading-tight tracking-tight text-foreground md:text-6xl lg:text-7xl">
               The Blonde<br />Muslim
             </h1>
             <p className="mt-6 max-w-lg font-sans text-lg leading-relaxed text-muted-foreground">
-              A space for Muslim women to connect, grow, and experience faith, lifestyle, and community. Authentic storytelling from Texas to the heart of the Ummah.
+              {"Gardens beneath which rivers flow."} A space for Muslimahs to connect, grow in faith, and serve the Ummah together. Authentic storytelling from Texas to the heart of our community.
             </p>
 
             {/* Stats */}
             <div className="mt-8 flex flex-wrap gap-6 text-sm">
               <div className="flex items-center gap-2">
-                <Instagram className="h-4 w-4 text-accent" />
+                <Instagram className="h-4 w-4 text-primary" />
                 <span className="font-semibold text-foreground">384K</span>
               </div>
               <div className="flex items-center gap-2">
-                <TikTokIcon className="h-4 w-4 text-accent" />
+                <TikTokIcon className="h-4 w-4 text-primary" />
                 <span className="font-semibold text-foreground">197K</span>
               </div>
               <div className="flex items-center gap-2">
-                <Youtube className="h-4 w-4 text-accent" />
+                <Youtube className="h-4 w-4 text-primary" />
                 <span className="font-semibold text-foreground">22K</span>
               </div>
               <div className="border-l border-border pl-6">
@@ -52,10 +67,10 @@ export function HeroSection() {
 
             {/* CTAs */}
             <div className="mt-10 flex flex-wrap gap-4">
-              <Button asChild size="lg" className="bg-foreground text-background hover:bg-foreground/90">
+              <Button asChild size="lg" className="bg-primary text-primary-foreground hover:bg-primary/90">
                 <Link href="#partner">Partner With Me</Link>
               </Button>
-              <Button asChild variant="outline" size="lg">
+              <Button asChild variant="outline" size="lg" className="border-primary/30 hover:bg-primary/10">
                 <Link href="#giving">View Impact</Link>
               </Button>
             </div>
@@ -64,9 +79,10 @@ export function HeroSection() {
           {/* Right Content - Portrait */}
           <div className="order-1 flex justify-center lg:order-2 lg:justify-end">
             <div className="relative">
-              {/* Decorative arch frame */}
-              <div className="absolute -inset-4 rounded-t-full border-2 border-accent/20" />
-              <div className="relative h-[400px] w-[320px] overflow-hidden rounded-t-full bg-secondary md:h-[500px] md:w-[400px]">
+              {/* Decorative arch frame with turquoise accent */}
+              <div className="absolute -inset-4 rounded-t-full border-2 border-primary/30" />
+              <div className="absolute -inset-6 rounded-t-full border border-accent/20" />
+              <div className="relative h-[400px] w-[320px] overflow-hidden rounded-t-full bg-secondary shadow-2xl md:h-[500px] md:w-[400px]">
                 <Image
                   src="/images/candace-profile.png"
                   alt="Candace - The Blonde Muslim"

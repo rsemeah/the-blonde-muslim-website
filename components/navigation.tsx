@@ -42,12 +42,12 @@ export function Navigation() {
               <Link
                 key={link.href}
                 href={link.href}
-                className="font-sans text-sm tracking-wide text-muted-foreground transition-colors hover:text-foreground"
+                className="font-sans text-sm tracking-wide text-muted-foreground transition-colors hover:text-primary"
               >
                 {link.label}
               </Link>
             ))}
-            <Button asChild className="bg-foreground text-background hover:bg-foreground/90">
+            <Button asChild className="bg-primary text-primary-foreground hover:bg-primary/90">
               <Link href="#contact">Work With Me</Link>
             </Button>
           </div>
@@ -73,13 +73,13 @@ export function Navigation() {
               <Link
                 key={link.href}
                 href={link.href}
-                className="font-sans text-sm tracking-wide text-muted-foreground transition-colors hover:text-foreground"
+                className="font-sans text-sm tracking-wide text-muted-foreground transition-colors hover:text-primary"
                 onClick={() => setIsMobileMenuOpen(false)}
               >
                 {link.label}
               </Link>
             ))}
-            <Button asChild className="w-full bg-foreground text-background hover:bg-foreground/90">
+            <Button asChild className="w-full bg-primary text-primary-foreground hover:bg-primary/90">
               <Link href="#contact" onClick={() => setIsMobileMenuOpen(false)}>
                 Work With Me
               </Link>
