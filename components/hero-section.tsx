@@ -2,97 +2,116 @@
 
 import Image from "next/image"
 import Link from "next/link"
-import { Button } from "@/components/ui/button"
-import { Instagram, Youtube } from "lucide-react"
-
-function TikTokIcon({ className }: { className?: string }) {
-  return (
-    <svg className={className} viewBox="0 0 24 24" fill="currentColor">
-      <path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.74 2.89 2.89 0 0 1 2.31-4.64 2.93 2.93 0 0 1 .88.13V9.4a6.84 6.84 0 0 0-1-.05A6.33 6.33 0 0 0 5 20.1a6.34 6.34 0 0 0 10.86-4.43v-7a8.16 8.16 0 0 0 4.77 1.52v-3.4a4.85 4.85 0 0 1-1-.1z"/>
-    </svg>
-  )
-}
 
 export function HeroSection() {
   return (
-    <section className="relative min-h-screen pt-20 overflow-hidden">
-      {/* Paradise Garden Background Image */}
+    <section className="relative min-h-screen overflow-hidden bg-background">
+      {/* Background Image with Editorial Treatment */}
       <div className="absolute inset-0">
         <Image
           src="/images/garden-paradise.jpg"
           alt=""
           fill
-          className="object-cover"
+          className="object-cover opacity-30 img-editorial"
           priority
         />
-        {/* Overlay for readability */}
-        <div className="absolute inset-0 bg-gradient-to-b from-background/90 via-background/75 to-background" />
+        <div className="absolute inset-0 bg-gradient-to-b from-background/40 via-background/60 to-background" />
       </div>
       
-      <div className="relative mx-auto max-w-7xl px-6 py-16 lg:py-24">
-        <div className="grid items-center gap-12 lg:grid-cols-2 lg:gap-16">
-          {/* Left Content */}
-          <div className="order-2 lg:order-1">
-            {/* Arabic Bismillah */}
-            <p className="font-serif text-lg text-primary/80 mb-2">
-              {"بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ"}
+      <div className="relative mx-auto max-w-7xl px-6 lg:px-8">
+        <div className="grid min-h-screen items-center gap-8 pt-24 pb-16 lg:grid-cols-12 lg:gap-12 lg:pt-0">
+          
+          {/* Left Content - Editorial Typography */}
+          <div className="order-2 lg:order-1 lg:col-span-6 xl:col-span-5">
+            {/* Eyebrow */}
+            <p className="text-[11px] font-medium uppercase tracking-[0.3em] text-muted-foreground">
+              Faith &middot; Culture &middot; Community
             </p>
             
-            <h1 className="font-serif text-5xl font-semibold leading-tight tracking-tight text-foreground md:text-6xl lg:text-7xl">
-              The Blonde<br />Muslim
+            {/* Main Headline - Magazine Style */}
+            <h1 className="mt-6 font-serif text-5xl font-light leading-[0.95] tracking-tight text-foreground sm:text-6xl lg:text-7xl xl:text-8xl">
+              The Blonde
+              <br />
+              <span className="italic">Muslim</span>
             </h1>
-            <p className="mt-6 max-w-lg font-sans text-lg leading-relaxed text-muted-foreground">
-              {"Gardens beneath which rivers flow."} A space for Muslimahs to connect, grow in faith, and serve the Ummah together. Authentic storytelling from Texas to the heart of our community.
+            
+            {/* Positioning Statement */}
+            <p className="mt-8 max-w-md font-sans text-base leading-relaxed text-muted-foreground lg:text-lg">
+              A trusted voice for Muslim women seeking beauty, depth, and belonging. 
+              Storyteller. Community builder. Connector of hearts.
             </p>
 
-            {/* Stats */}
-            <div className="mt-8 flex flex-wrap gap-6 text-sm">
-              <div className="flex items-center gap-2">
-                <Instagram className="h-4 w-4 text-primary" />
-                <span className="font-semibold text-foreground">384K</span>
-              </div>
-              <div className="flex items-center gap-2">
-                <TikTokIcon className="h-4 w-4 text-primary" />
-                <span className="font-semibold text-foreground">197K</span>
-              </div>
-              <div className="flex items-center gap-2">
-                <Youtube className="h-4 w-4 text-primary" />
-                <span className="font-semibold text-foreground">22K</span>
-              </div>
-              <div className="border-l border-border pl-6">
-                <span className="font-semibold text-foreground">603K+</span>
-                <span className="ml-1 text-muted-foreground">Combined Reach</span>
-              </div>
-            </div>
+            {/* Elegant Divider */}
+            <div className="my-10 h-px w-24 bg-accent/50" />
 
-            {/* CTAs */}
-            <div className="mt-10 flex flex-wrap gap-4">
-              <Button asChild size="lg" className="bg-primary text-primary-foreground hover:bg-primary/90">
-                <Link href="#partner">Partner With Me</Link>
-              </Button>
-              <Button asChild variant="outline" size="lg" className="border-primary/30 hover:bg-primary/10">
-                <Link href="#giving">View Impact</Link>
-              </Button>
+            {/* Editorial Quote */}
+            <blockquote className="max-w-sm">
+              <p className="font-serif text-xl italic leading-relaxed text-foreground/80 lg:text-2xl">
+                {"\"Gardens beneath which rivers flow\""}
+              </p>
+              <cite className="mt-3 block text-[11px] font-medium uppercase tracking-[0.2em] text-muted-foreground not-italic">
+                Quranic Promise of Paradise
+              </cite>
+            </blockquote>
+
+            {/* CTAs - Luxury Buttons */}
+            <div className="mt-12 flex flex-col gap-4 sm:flex-row">
+              <Link
+                href="#about"
+                className="inline-flex items-center justify-center border border-foreground bg-foreground px-8 py-4 text-[11px] font-medium uppercase tracking-[0.2em] text-background transition-all duration-300 hover:bg-transparent hover:text-foreground"
+              >
+                Enter Her World
+              </Link>
+              <Link
+                href="#partnerships"
+                className="inline-flex items-center justify-center border border-foreground/20 px-8 py-4 text-[11px] font-medium uppercase tracking-[0.2em] text-foreground transition-all duration-300 hover:border-foreground/40"
+              >
+                Work Together
+              </Link>
             </div>
           </div>
 
-          {/* Right Content - Portrait */}
-          <div className="order-1 flex justify-center lg:order-2 lg:justify-end">
+          {/* Right Content - Large Portrait */}
+          <div className="order-1 flex justify-center lg:order-2 lg:col-span-6 xl:col-span-7">
             <div className="relative">
-              {/* Decorative arch frame with turquoise accent */}
-              <div className="absolute -inset-4 rounded-t-full border-2 border-primary/30" />
-              <div className="absolute -inset-6 rounded-t-full border border-accent/20" />
-              <div className="relative h-[400px] w-[320px] overflow-hidden rounded-t-full bg-secondary shadow-2xl md:h-[500px] md:w-[400px]">
+              {/* Subtle Frame */}
+              <div className="absolute -inset-3 border border-accent/20" />
+              <div className="absolute -inset-6 border border-accent/10" />
+              
+              {/* Portrait Container */}
+              <div className="relative h-[450px] w-[340px] overflow-hidden bg-secondary sm:h-[550px] sm:w-[420px] lg:h-[600px] lg:w-[460px]">
                 <Image
                   src="/images/candace-profile.png"
                   alt="Candace - The Blonde Muslim"
                   fill
-                  className="object-cover object-top"
+                  className="object-cover object-top img-editorial"
                   priority
                 />
+                {/* Subtle overlay to warm the image */}
+                <div className="absolute inset-0 bg-gradient-to-t from-background/20 via-transparent to-transparent" />
+              </div>
+
+              {/* Floating Stats Card */}
+              <div className="absolute -bottom-6 -left-6 bg-background/95 backdrop-blur-sm px-6 py-4 shadow-lg sm:-left-12 sm:px-8 sm:py-5">
+                <p className="text-[10px] font-medium uppercase tracking-[0.2em] text-muted-foreground">
+                  Combined Reach
+                </p>
+                <p className="mt-1 font-serif text-3xl text-foreground sm:text-4xl">
+                  603<span className="text-accent">K</span>+
+                </p>
               </div>
             </div>
           </div>
+        </div>
+      </div>
+
+      {/* Scroll Indicator */}
+      <div className="absolute bottom-8 left-1/2 -translate-x-1/2">
+        <div className="flex flex-col items-center gap-2">
+          <span className="text-[10px] font-medium uppercase tracking-[0.3em] text-muted-foreground">
+            Scroll
+          </span>
+          <div className="h-12 w-px bg-gradient-to-b from-accent/50 to-transparent" />
         </div>
       </div>
     </section>
