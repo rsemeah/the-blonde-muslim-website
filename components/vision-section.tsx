@@ -39,7 +39,7 @@ export function VisionSection() {
         <p className="mx-auto max-w-2xl text-base leading-relaxed text-muted-foreground lg:text-lg">
           Building toward women-only Saudi experiences, curated Hajj and Umrah community 
           journeys, and halal travel designed for Muslim women who want to move through the 
-          world with intention, beauty, and sisterhood.
+          world with intention, faith, and sisterhood.
         </p>
 
         {/* Vision Pillars */}

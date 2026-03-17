@@ -59,8 +59,8 @@ export function Footer() {
               <VerifiedBadge className="h-5 w-5" />
             </Link>
             <p className="mt-4 max-w-xs text-sm leading-relaxed text-muted-foreground">
-              A trusted voice for Muslim women seeking beauty, depth, and belonging. 
-              Faith. Culture. Community.
+              A trusted voice for Muslim women seeking depth, belonging, and knowledge. 
+              Faith. Community. Charity.
             </p>
             
             {/* Stats */}

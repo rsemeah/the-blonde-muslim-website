@@ -39,7 +39,7 @@ export default function Home() {
             <div className="max-w-2xl">
               {/* Eyebrow */}
               <p className="text-[11px] font-medium uppercase tracking-[0.3em] text-background/70">
-                Faith &middot; Beauty &middot; Community
+                Faith &middot; Community &middot; Knowledge
               </p>
               
               {/* Main Headline */}
@@ -54,7 +54,7 @@ export default function Home() {
               
               {/* Positioning */}
               <p className="mt-8 max-w-md text-base leading-relaxed text-background/80 lg:text-lg">
-                A trusted voice for Muslim women seeking beauty, depth, and belonging. 
+                A trusted voice for Muslim women seeking depth, belonging, and knowledge. 
                 Storyteller. Community builder. Connector of hearts.
               </p>
 
@@ -413,7 +413,7 @@ export default function Home() {
               </h2>
             </div>
             <p className="hidden text-sm text-muted-foreground lg:block">
-              Daily glimpses into faith, beauty, and connection
+              Daily glimpses into faith, community, and connection
             </p>
           </div>
 

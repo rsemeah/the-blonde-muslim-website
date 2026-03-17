@@ -59,7 +59,7 @@ export function AboutSection() {
                 <p>
                   What sets her apart is her softness. Her approach is never preachy, never performative. 
                   Instead, she leads with grace, inviting others into reflection, connection, and growth 
-                  through beauty and belonging.
+                  through faith and belonging.
                 </p>
                 <p>
                   Her philanthropic heart beats loudest in her commitment to Sadaqah Jariyah 
