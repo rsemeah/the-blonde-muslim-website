@@ -14,7 +14,7 @@ const partnershipTypes = [
   {
     icon: Camera,
     title: "Brand Collaborations",
-    description: "Authentic content creation that resonates with Muslim women seeking beauty, lifestyle, and faith-aligned products.",
+    description: "Authentic content creation that resonates with Muslim women seeking faith, lifestyle, and values-aligned products.",
   },
   {
     icon: Mic,
@@ -185,7 +185,7 @@ export default function PartnershipsPage() {
                 <div className="border-l-2 border-accent/30 pl-6">
                   <h3 className="font-serif text-lg text-foreground">Ideal Partners</h3>
                   <p className="mt-2 text-muted-foreground">
-                    Fashion, beauty, lifestyle, travel, home, wellness, and family brands 
+                    Fashion, lifestyle, travel, home, wellness, charity, and family brands 
                     that respect modesty and Muslim values.
                   </p>
                 </div>

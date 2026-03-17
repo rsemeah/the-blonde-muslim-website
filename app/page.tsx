@@ -2,6 +2,8 @@ import { Navigation } from "@/components/navigation"
 import { Footer } from "@/components/footer"
 import { VideoFeature } from "@/components/video-feature"
 import { VideoGrid } from "@/components/video-grid"
+import { DropsPreview } from "@/components/drops"
+import { getFeaturedDrops } from "@/lib/drops"
 import { 
   InstagramIcon, 
   TikTokIcon, 
@@ -39,7 +41,7 @@ export default function Home() {
             <div className="max-w-2xl">
               {/* Eyebrow */}
               <p className="text-[11px] font-medium uppercase tracking-[0.3em] text-background/70">
-                Faith &middot; Beauty &middot; Community
+                Faith &middot; Community &middot; Knowledge
               </p>
               
               {/* Main Headline */}
@@ -54,7 +56,7 @@ export default function Home() {
               
               {/* Positioning */}
               <p className="mt-8 max-w-md text-base leading-relaxed text-background/80 lg:text-lg">
-                A trusted voice for Muslim women seeking beauty, depth, and belonging. 
+                A trusted voice for Muslim women seeking depth, belonging, and knowledge. 
                 Storyteller. Community builder. Connector of hearts.
               </p>
 
@@ -258,6 +260,14 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Latest Drops */}
+      <DropsPreview 
+        drops={getFeaturedDrops()} 
+        title="Latest Drops" 
+        ctaLabel="See All Drops" 
+        ctaHref="/drops" 
+      />
+
       {/* MSLM Brand Section */}
       <section className="bg-foreground py-24 lg:py-32">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
@@ -413,7 +423,7 @@ export default function Home() {
               </h2>
             </div>
             <p className="hidden text-sm text-muted-foreground lg:block">
-              Daily glimpses into faith, beauty, and connection
+              Daily glimpses into faith, community, and connection
             </p>
           </div>
 

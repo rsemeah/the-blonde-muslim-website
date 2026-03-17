@@ -37,7 +37,7 @@ export function HeroSection() {
             
             {/* Positioning Statement */}
             <p className="mt-8 max-w-md font-sans text-base leading-relaxed text-muted-foreground lg:text-lg">
-              A trusted voice for Muslim women seeking beauty, depth, and belonging. 
+              A trusted voice for Muslim women seeking depth, belonging, and knowledge. 
               Storyteller. Community builder. Connector of hearts.
             </p>
 

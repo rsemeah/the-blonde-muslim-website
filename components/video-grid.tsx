@@ -70,8 +70,8 @@ const videos = [
     title: "Reflections",
   },
   {
-    src: "/videos/beauty.mp4",
-    title: "Beauty",
+    src: "/videos/charity.mp4",
+    title: "Charity",
   },
   {
     src: "/videos/faith-journey.mp4",

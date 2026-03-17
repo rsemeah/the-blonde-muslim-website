@@ -9,10 +9,11 @@ import { InstagramIcon, TikTokIcon, YouTubeIcon, VerifiedBadge } from "./social-
 const navLinks = [
   { href: "/about", label: "About" },
   { href: "/circle", label: "The Circle" },
+  { href: "/companion", label: "Amina" },
   { href: "/mslm", label: "MSLM" },
   { href: "/muslim-texas", label: "Muslim Texas" },
+  { href: "/saudi", label: "Saudi Journey" },
   { href: "/partnerships", label: "Partnerships" },
-  { href: "/vision", label: "Vision" },
 ]
 
 export function Navigation() {
@@ -33,8 +34,8 @@ export function Navigation() {
       <nav
         className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
           isScrolled 
-            ? "bg-background/98 backdrop-blur-sm" 
-            : "bg-transparent"
+            ? "bg-background/98 backdrop-blur-sm shadow-sm" 
+            : "bg-gradient-to-b from-black/40 via-black/20 to-transparent"
         }`}
       >
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
@@ -42,28 +43,38 @@ export function Navigation() {
             {/* Logo */}
             <Link 
               href="/" 
-              className="inline-flex items-center gap-2 font-serif text-lg tracking-wide text-foreground transition-opacity hover:opacity-70 md:text-xl"
+              className={`inline-flex items-center gap-2 font-serif text-lg tracking-wide transition-all hover:opacity-80 md:text-xl ${
+                isScrolled ? "text-foreground" : "text-white drop-shadow-md"
+              }`}
             >
               The Blonde Muslim
               <VerifiedBadge className="h-4 w-4" />
             </Link>
 
             {/* Desktop Navigation */}
-            <div className="hidden items-center gap-10 lg:flex">
+            <div className="hidden items-center gap-8 lg:flex">
               {navLinks.map((link) => (
                 <Link
                   key={link.href}
                   href={link.href}
-                  className={`text-[11px] font-medium uppercase tracking-[0.2em] transition-colors duration-300 hover:text-foreground ${
-                    pathname === link.href ? "text-foreground" : "text-muted-foreground"
-                  }`}
+                  className={`relative text-[11px] font-semibold uppercase tracking-[0.2em] transition-all duration-300 ${
+                    isScrolled 
+                      ? pathname === link.href 
+                        ? "text-foreground" 
+                        : "text-muted-foreground hover:text-foreground"
+                      : "text-white drop-shadow-md hover:text-sky-blue"
+                  } ${pathname === link.href ? "after:absolute after:-bottom-1 after:left-0 after:h-0.5 after:w-full after:bg-sky-blue" : ""}`}
                 >
                   {link.label}
                 </Link>
               ))}
               <Link
                 href="/contact"
-                className="border border-foreground/20 px-6 py-2.5 text-[11px] font-medium uppercase tracking-[0.2em] text-foreground transition-all duration-300 hover:bg-foreground hover:text-background"
+                className={`px-6 py-2.5 text-[11px] font-semibold uppercase tracking-[0.2em] transition-all duration-300 ${
+                  isScrolled 
+                    ? "border border-foreground/20 text-foreground hover:bg-foreground hover:text-background"
+                    : "bg-sky-blue/90 text-white hover:bg-sky-blue shadow-md"
+                }`}
               >
                 Connect
               </Link>
@@ -71,14 +82,16 @@ export function Navigation() {
 
             {/* Mobile Menu Button */}
             <button
-              className="flex h-10 w-10 items-center justify-center lg:hidden"
+              className={`flex h-10 w-10 items-center justify-center lg:hidden ${
+                isScrolled ? "text-foreground" : "text-white drop-shadow-md"
+              }`}
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
               aria-label="Toggle menu"
             >
               {isMobileMenuOpen ? (
-                <X className="h-5 w-5 text-foreground" />
+                <X className="h-5 w-5" />
               ) : (
-                <Menu className="h-5 w-5 text-foreground" />
+                <Menu className="h-5 w-5" />
               )}
             </button>
           </div>

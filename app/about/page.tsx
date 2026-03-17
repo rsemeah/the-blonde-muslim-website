@@ -124,9 +124,9 @@ export default function AboutPage() {
                   </p>
                 </div>
                 <div>
-                  <h3 className="font-serif text-xl text-foreground">Authentic Beauty</h3>
+                  <h3 className="font-serif text-xl text-foreground">Seeking Knowledge</h3>
                   <p className="mt-2 text-muted-foreground">
-                    Beauty that honors modesty, celebrates culture, and reflects inner light.
+                    An eternal quest for understanding that deepens faith and enriches the soul.
                   </p>
                 </div>
                 <div>

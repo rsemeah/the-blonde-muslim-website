@@ -24,7 +24,10 @@ const socialLinks = [
 const navLinks = [
   { href: "/about", label: "About" },
   { href: "/circle", label: "The Circle" },
+  { href: "/companion", label: "Amina" },
+  { href: "/mslm", label: "MSLM" },
   { href: "/muslim-texas", label: "Muslim Texas" },
+  { href: "/saudi", label: "Saudi Journey" },
   { href: "/partnerships", label: "Partnerships" },
   { href: "/contact", label: "Contact" },
 ]
@@ -36,6 +39,7 @@ const legalLinks = [
 ]
 
 const externalLinks = [
+  { href: "https://candace-ashley-s-school.teachable.com/", label: "Prayer Course", external: true },
   { href: "https://www.mslmcollective.com/", label: "MSLM Shop", external: true },
   { href: "https://podcasts.apple.com/", label: "Podcast", external: true },
 ]
@@ -56,8 +60,8 @@ export function Footer() {
               <VerifiedBadge className="h-5 w-5" />
             </Link>
             <p className="mt-4 max-w-xs text-sm leading-relaxed text-muted-foreground">
-              A trusted voice for Muslim women seeking beauty, depth, and belonging. 
-              Faith. Culture. Community.
+              A trusted voice for Muslim women seeking depth, belonging, and knowledge. 
+              Faith. Community. Charity.
             </p>
             
             {/* Stats */}
