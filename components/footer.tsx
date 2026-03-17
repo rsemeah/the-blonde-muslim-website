@@ -24,10 +24,8 @@ const socialLinks = [
 const navLinks = [
   { href: "/about", label: "About" },
   { href: "/circle", label: "The Circle" },
-  { href: "/mslm", label: "MSLM" },
   { href: "/muslim-texas", label: "Muslim Texas" },
   { href: "/partnerships", label: "Partnerships" },
-  { href: "/vision", label: "Vision" },
   { href: "/contact", label: "Contact" },
 ]
 

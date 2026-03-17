@@ -162,35 +162,22 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Featured Pathways Grid */}
+      {/* Platform Entry Points - The 3 Core Pillars */}
       <section className="bg-background py-24 lg:py-32">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
+          {/* Section Header */}
+          <div className="mb-16 text-center">
+            <p className="text-[11px] font-medium uppercase tracking-[0.3em] text-muted-foreground">
+              Enter The Ecosystem
+            </p>
+            <h2 className="mt-4 font-serif text-4xl text-foreground sm:text-5xl">
+              Three Ways to Connect
+            </h2>
+          </div>
+          
           <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
             
-            {/* About Card */}
-            <Link href="/about" className="group relative overflow-hidden">
-              <div className="aspect-[4/5] overflow-hidden bg-secondary">
-                <Image
-                  src="/images/candace-profile.png"
-                  alt="About Candace"
-                  fill
-                  className="object-cover transition-transform duration-700 group-hover:scale-105"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-foreground/60 via-foreground/20 to-transparent" />
-              </div>
-              <div className="absolute bottom-0 left-0 right-0 p-8">
-                <p className="text-[10px] font-medium uppercase tracking-[0.3em] text-background/60">
-                  Her Story
-                </p>
-                <h3 className="mt-2 font-serif text-3xl text-background">About</h3>
-                <div className="mt-4 flex items-center gap-2 text-[11px] font-medium uppercase tracking-[0.2em] text-background/80 transition-all duration-300 group-hover:gap-4">
-                  <span>Discover</span>
-                  <ArrowRight className="h-4 w-4" />
-                </div>
-              </div>
-            </Link>
-
-            {/* The Circle Card */}
+            {/* The Circle Card - Community */}
             <Link href="/circle" className="group relative overflow-hidden">
               <div className="aspect-[4/5] overflow-hidden bg-secondary">
                 <VideoFeature 
@@ -199,38 +186,70 @@ export default function Home() {
                   className="h-full w-full"
                   overlay={false}
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-foreground/60 via-foreground/20 to-transparent" />
+                <div className="absolute inset-0 bg-gradient-to-t from-foreground/80 via-foreground/30 to-transparent" />
               </div>
               <div className="absolute bottom-0 left-0 right-0 p-8">
                 <p className="text-[10px] font-medium uppercase tracking-[0.3em] text-background/60">
                   Community
                 </p>
-                <h3 className="mt-2 font-serif text-3xl text-background">The Circle</h3>
+                <h3 className="mt-2 font-serif text-3xl text-background">Join The Circle</h3>
+                <p className="mt-3 text-sm leading-relaxed text-background/70">
+                  A private community for Muslim women seeking connection, growth, and sisterhood.
+                </p>
                 <div className="mt-4 flex items-center gap-2 text-[11px] font-medium uppercase tracking-[0.2em] text-background/80 transition-all duration-300 group-hover:gap-4">
-                  <span>Join</span>
+                  <span>Join Now</span>
                   <ArrowRight className="h-4 w-4" />
                 </div>
               </div>
             </Link>
 
-            {/* Muslim Texas Card */}
-            <Link href="/muslim-texas" className="group relative overflow-hidden md:col-span-2 lg:col-span-1">
-              <div className="aspect-[4/5] overflow-hidden bg-secondary lg:aspect-[4/5]">
+            {/* Muslim Texas Card - Discovery */}
+            <Link href="/muslim-texas" className="group relative overflow-hidden">
+              <div className="aspect-[4/5] overflow-hidden bg-secondary">
                 <VideoFeature 
                   src="/videos/texas.mp4" 
                   aspectRatio="portrait"
                   className="h-full w-full"
                   overlay={false}
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-foreground/60 via-foreground/20 to-transparent" />
+                <div className="absolute inset-0 bg-gradient-to-t from-foreground/80 via-foreground/30 to-transparent" />
               </div>
               <div className="absolute bottom-0 left-0 right-0 p-8">
                 <p className="text-[10px] font-medium uppercase tracking-[0.3em] text-background/60">
-                  Editorial Series
+                  Discovery
                 </p>
-                <h3 className="mt-2 font-serif text-3xl text-background">Muslim Texas</h3>
+                <h3 className="mt-2 font-serif text-3xl text-background">Explore Muslim Texas</h3>
+                <p className="mt-3 text-sm leading-relaxed text-background/70">
+                  Discover Muslim-owned businesses and stories across the Lone Star State.
+                </p>
                 <div className="mt-4 flex items-center gap-2 text-[11px] font-medium uppercase tracking-[0.2em] text-background/80 transition-all duration-300 group-hover:gap-4">
                   <span>Explore</span>
+                  <ArrowRight className="h-4 w-4" />
+                </div>
+              </div>
+            </Link>
+
+            {/* Partnerships Card - Work Together */}
+            <Link href="/partnerships" className="group relative overflow-hidden md:col-span-2 lg:col-span-1">
+              <div className="aspect-[4/5] overflow-hidden bg-secondary lg:aspect-[4/5]">
+                <VideoFeature 
+                  src="/videos/partnerships.mp4" 
+                  aspectRatio="portrait"
+                  className="h-full w-full"
+                  overlay={false}
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-foreground/80 via-foreground/30 to-transparent" />
+              </div>
+              <div className="absolute bottom-0 left-0 right-0 p-8">
+                <p className="text-[10px] font-medium uppercase tracking-[0.3em] text-background/60">
+                  For Brands
+                </p>
+                <h3 className="mt-2 font-serif text-3xl text-background">Work With Me</h3>
+                <p className="mt-3 text-sm leading-relaxed text-background/70">
+                  Partner with a trusted voice in the Muslim lifestyle space.
+                </p>
+                <div className="mt-4 flex items-center gap-2 text-[11px] font-medium uppercase tracking-[0.2em] text-background/80 transition-all duration-300 group-hover:gap-4">
+                  <span>Partner</span>
                   <ArrowRight className="h-4 w-4" />
                 </div>
               </div>
