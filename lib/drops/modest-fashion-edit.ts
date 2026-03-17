@@ -1,0 +1,107 @@
+import { Drop } from './types'
+
+export const modestFashionEdit: Drop = {
+  slug: 'modest-fashion-edit',
+  title: 'The Modest Fashion Edit',
+  subtitle: 'Pieces that feel like you — covered, confident, current.',
+  category: 'fashion',
+  coverImage: '/images/drops/modest-fashion.jpg',
+  publishedAt: '2024-01-20',
+  featured: true,
+  intro: `Modest fashion is not a limitation. It is a language. These are the brands and pieces I actually wear, save, and come back to — curated for Muslim women who refuse to choose between faith and style.`,
+  sections: [
+    {
+      title: 'Everyday Essentials',
+      brands: [
+        {
+          id: 'fashion-1',
+          name: 'Haute Hijab',
+          description: 'Premium hijabs and modest wear that actually stays put through your whole day.',
+          image: '/images/drops/placeholder.jpg',
+          ctaLabel: 'Shop Collection',
+          ctaHref: '#',
+          featured: true,
+        },
+        {
+          id: 'fashion-2',
+          name: 'Aab Collection',
+          description: 'London-based modest fashion with a focus on elevated basics.',
+          image: '/images/drops/placeholder.jpg',
+          ctaLabel: 'Explore',
+          ctaHref: '#',
+          featured: false,
+        },
+        {
+          id: 'fashion-3',
+          name: 'Modanisa',
+          description: 'Global marketplace for modest fashion at every price point.',
+          image: '/images/drops/placeholder.jpg',
+          ctaLabel: 'Browse',
+          ctaHref: '#',
+          featured: false,
+        },
+      ],
+    },
+    {
+      title: 'Special Occasions',
+      brands: [
+        {
+          id: 'occasion-1',
+          name: 'Inayah',
+          description: 'Elegant abayas and evening wear for when you want to show up — modestly.',
+          image: '/images/drops/placeholder.jpg',
+          ctaLabel: 'View Lookbook',
+          ctaHref: '#',
+          featured: true,
+        },
+        {
+          id: 'occasion-2',
+          name: 'Annah Hariri',
+          description: 'Bespoke modest gowns for weddings, galas, and celebrations.',
+          image: '/images/drops/placeholder.jpg',
+          ctaLabel: 'Custom Orders',
+          ctaHref: '#',
+          featured: false,
+        },
+        {
+          id: 'occasion-3',
+          name: 'Vela Scarves',
+          description: 'Luxury silk scarves that elevate any outfit instantly.',
+          image: '/images/drops/placeholder.jpg',
+          ctaLabel: 'Shop Silk',
+          ctaHref: '#',
+          featured: false,
+        },
+      ],
+    },
+    {
+      title: 'Brands to Watch',
+      brands: [
+        {
+          id: 'watch-1',
+          name: 'Nida Studios',
+          description: 'Minimalist modest basics from a new Muslim-owned brand making waves.',
+          image: '/images/drops/placeholder.jpg',
+          ctaLabel: 'Discover',
+          ctaHref: '#',
+          featured: true,
+        },
+        {
+          id: 'watch-2',
+          name: 'Safiya Modest',
+          description: 'Contemporary silhouettes that bridge streetwear and modesty.',
+          image: '/images/drops/placeholder.jpg',
+          ctaLabel: 'See More',
+          ctaHref: '#',
+          featured: false,
+        },
+      ],
+    },
+  ],
+  reflection: {
+    insight: 'Modesty was never meant to make you invisible. It was meant to redirect attention — from how you look to who you are.',
+    question: 'When you get dressed in the morning, what intention are you setting — even without realizing it?',
+  },
+  ctaText: 'Explore more with The Circle',
+  ctaHref: '/circle',
+}

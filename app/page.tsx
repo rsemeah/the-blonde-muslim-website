@@ -2,6 +2,8 @@ import { Navigation } from "@/components/navigation"
 import { Footer } from "@/components/footer"
 import { VideoFeature } from "@/components/video-feature"
 import { VideoGrid } from "@/components/video-grid"
+import { DropsPreview } from "@/components/drops"
+import { getFeaturedDrops } from "@/lib/drops"
 import { 
   InstagramIcon, 
   TikTokIcon, 
@@ -257,6 +259,14 @@ export default function Home() {
           </div>
         </div>
       </section>
+
+      {/* Latest Drops */}
+      <DropsPreview 
+        drops={getFeaturedDrops()} 
+        title="Latest Drops" 
+        ctaLabel="See All Drops" 
+        ctaHref="/drops" 
+      />
 
       {/* MSLM Brand Section */}
       <section className="bg-foreground py-24 lg:py-32">

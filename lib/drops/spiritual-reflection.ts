@@ -1,0 +1,102 @@
+import { Drop } from './types'
+
+export const spiritualReflection: Drop = {
+  slug: 'spiritual-reflection',
+  title: 'Deeper Reflections',
+  subtitle: 'Stories from the tradition — lived in the present.',
+  category: 'spiritual',
+  coverImage: '/images/drops/spiritual-reflection.jpg',
+  publishedAt: '2024-01-10',
+  featured: false,
+  intro: `Some of the most relevant wisdom I have ever encountered came from stories that are over a thousand years old. This drop is not about products. It is about pausing. It is about the kind of knowing that does not come from a scroll.`,
+  sections: [
+    {
+      title: 'The Story of Khidr and Musa',
+      description: 'A prophet. A guide. A journey neither of them fully understood in the moment. Sound familiar?',
+      brands: [
+        {
+          id: 'khidr-1',
+          name: 'Tafsir Al-Kahf',
+          description: 'A deep dive into the cave — the surah that holds the story.',
+          image: '/images/drops/placeholder.jpg',
+          ctaLabel: 'Read More',
+          ctaHref: '#',
+          featured: true,
+        },
+        {
+          id: 'khidr-2',
+          name: 'Reflection Journal',
+          description: 'A journal designed for sitting with difficult questions.',
+          image: '/images/drops/placeholder.jpg',
+          ctaLabel: 'Get Yours',
+          ctaHref: '#',
+          featured: false,
+        },
+      ],
+    },
+    {
+      title: 'What the Story Holds for You',
+      description: 'Three things Musa had to surrender — and what we can learn.',
+      brands: [
+        {
+          id: 'lesson-1',
+          name: 'The Art of Patience',
+          description: "A guided course on cultivating sabr in a culture that rewards speed.",
+          image: '/images/drops/placeholder.jpg',
+          ctaLabel: 'Enroll',
+          ctaHref: '#',
+          featured: true,
+        },
+        {
+          id: 'lesson-2',
+          name: 'Trust in the Unseen',
+          description: 'Workshops on tawakkul — trusting what you cannot yet understand.',
+          image: '/images/drops/placeholder.jpg',
+          ctaLabel: 'Learn More',
+          ctaHref: '#',
+          featured: false,
+        },
+      ],
+    },
+    {
+      title: 'Tools for the Inner Journey',
+      description: 'Not apps. Not hacks. Just things that create space.',
+      brands: [
+        {
+          id: 'tool-1',
+          name: 'Friday Night Journal',
+          description: 'Weekly reflection prompts delivered every Jummah eve.',
+          image: '/images/drops/placeholder.jpg',
+          ctaLabel: 'Subscribe',
+          ctaHref: '#',
+          featured: true,
+        },
+        {
+          id: 'tool-2',
+          name: 'Silent Retreat Guide',
+          description: 'A self-guided spiritual retreat you can do at home.',
+          image: '/images/drops/placeholder.jpg',
+          ctaLabel: 'Download',
+          ctaHref: '#',
+          featured: false,
+        },
+        {
+          id: 'tool-3',
+          name: 'Contemplation Cards',
+          description: 'Daily prompts drawn from Islamic tradition for morning reflection.',
+          image: '/images/drops/placeholder.jpg',
+          ctaLabel: 'Order',
+          ctaHref: '#',
+          featured: false,
+        },
+      ],
+    },
+  ],
+  reflection: {
+    insight: 'Musa was one of the greatest prophets — and even he had to be told to stop, be patient, and trust a process he did not understand. You are not behind. You are in the middle of something.',
+    question: 'Where in your life are you being asked to trust a process that does not make sense yet?',
+    reference: 'Inspired by Surah Al-Kahf, Ayat 60–82.',
+  },
+  ctaText: 'Go deeper in The Circle',
+  ctaHref: '/circle',
+}

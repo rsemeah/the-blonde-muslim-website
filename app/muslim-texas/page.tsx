@@ -2,6 +2,8 @@ import { Navigation } from "@/components/navigation"
 import { Footer } from "@/components/footer"
 import { VideoFeature } from "@/components/video-feature"
 import { BusinessApplicationForm } from "@/components/business-application-form"
+import { DropsPreview } from "@/components/drops"
+import { allDrops } from "@/lib/drops"
 import Image from "next/image"
 import Link from "next/link"
 import { Play, MapPin, Utensils, Calendar, Store, Building2, Sparkles } from "lucide-react"
@@ -181,6 +183,14 @@ export default function MuslimTexasPage() {
           </div>
         </div>
       </section>
+
+      {/* Curated Drops Section */}
+      <DropsPreview 
+        drops={allDrops.filter(drop => drop.category === 'food' || drop.category === 'lifestyle')} 
+        title="Curated Drops" 
+        ctaLabel="Explore All Drops" 
+        ctaHref="/drops" 
+      />
 
       {/* Divider */}
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
