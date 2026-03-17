@@ -55,7 +55,7 @@ export function Footer() {
               <span className="font-serif text-2xl tracking-wide text-foreground">
                 The Blonde Muslim
               </span>
-              <VerifiedBadge className="h-5 w-5 text-accent" />
+              <VerifiedBadge className="h-5 w-5" />
             </Link>
             <p className="mt-4 max-w-xs text-sm leading-relaxed text-muted-foreground">
               A trusted voice for Muslim women seeking beauty, depth, and belonging. 

@@ -37,8 +37,8 @@ export default function CirclePage() {
         
         <div className="relative z-10 mx-auto max-w-7xl px-6 lg:px-8">
           <div className="flex min-h-screen flex-col items-center justify-center py-24 text-center">
-            {/* Crescent Moon */}
-            <CrescentMoon className="h-12 w-12 text-accent/60" />
+            {/* Crescent Moon - Madinah blue accent */}
+            <CrescentMoon className="h-12 w-12 text-sky-blue" />
             
             <h1 className="mt-8 font-serif text-5xl font-light text-background sm:text-6xl lg:text-7xl">
               The Circle
@@ -49,7 +49,7 @@ export default function CirclePage() {
               Not therapy. Not religious authority. Simply community.
             </p>
 
-            <div className="mt-10 h-px w-24 bg-accent/30" />
+            <div className="mt-10 h-px w-24 bg-madinah-blue/50" />
             
             <p className="mt-10 font-serif text-2xl italic text-background/70">
               {"\"Where sisters become family\""}

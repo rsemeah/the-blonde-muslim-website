@@ -45,7 +45,7 @@ export function Navigation() {
               className="inline-flex items-center gap-2 font-serif text-lg tracking-wide text-foreground transition-opacity hover:opacity-70 md:text-xl"
             >
               The Blonde Muslim
-              <VerifiedBadge className="h-4 w-4 text-accent" />
+              <VerifiedBadge className="h-4 w-4" />
             </Link>
 
             {/* Desktop Navigation */}

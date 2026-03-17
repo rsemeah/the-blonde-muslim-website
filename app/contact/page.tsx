@@ -184,7 +184,7 @@ export default function ContactPage() {
                         <div className="flex items-center gap-1">
                           <p className="text-sm font-medium text-foreground">{social.name}</p>
                           {social.followers && (
-                            <VerifiedBadge className="h-3.5 w-3.5 text-accent" />
+                            <VerifiedBadge className="h-3.5 w-3.5" />
                           )}
                         </div>
                         {social.followers ? (

@@ -48,7 +48,7 @@ export default function Home() {
                 <br />
                 <span className="inline-flex items-center gap-4">
                   <span className="italic">Muslim</span>
-                  <VerifiedBadge className="h-8 w-8 text-accent lg:h-10 lg:w-10" />
+                  <VerifiedBadge className="h-8 w-8 lg:h-10 lg:w-10" />
                 </span>
               </h1>
               
