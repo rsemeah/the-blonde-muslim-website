@@ -1,6 +1,7 @@
 import { Navigation } from "@/components/navigation"
 import { Footer } from "@/components/footer"
 import { VideoFeature } from "@/components/video-feature"
+import { VideoGrid } from "@/components/video-grid"
 import { 
   InstagramIcon, 
   TikTokIcon, 
@@ -9,7 +10,7 @@ import {
 } from "@/components/social-icons"
 import Image from "next/image"
 import Link from "next/link"
-import { ArrowRight, Play, Users, Heart, Globe } from "lucide-react"
+import { ArrowRight } from "lucide-react"
 
 export default function Home() {
   return (
@@ -398,100 +399,8 @@ export default function Home() {
           </div>
 
           {/* Video Grid */}
-          <div className="mt-16 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
-            {/* Featured - Muslim Texas */}
-            <div className="group relative aspect-[9/16] overflow-hidden sm:col-span-2 sm:row-span-2">
-              <video
-                className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
-                muted
-                loop
-                playsInline
-                onMouseEnter={(e) => e.currentTarget.play()}
-                onMouseLeave={(e) => { e.currentTarget.pause(); e.currentTarget.currentTime = 0; }}
-              >
-                <source src="/videos/texas.mp4" type="video/mp4" />
-              </video>
-              <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent" />
-              <div className="absolute left-4 top-4 bg-accent px-3 py-1.5 text-[9px] font-medium uppercase tracking-[0.2em] text-foreground">
-                Featured Series
-              </div>
-              <div className="absolute bottom-0 left-0 right-0 p-6">
-                <p className="font-serif text-2xl text-white">Muslim Texas</p>
-                <p className="mt-2 text-sm text-white/70">Documentary Series</p>
-              </div>
-            </div>
-
-            {/* Lifestyle */}
-            <div className="group relative aspect-[9/16] overflow-hidden">
-              <video
-                className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
-                muted
-                loop
-                playsInline
-                onMouseEnter={(e) => e.currentTarget.play()}
-                onMouseLeave={(e) => { e.currentTarget.pause(); e.currentTarget.currentTime = 0; }}
-              >
-                <source src="/videos/lifestyle-moments.mp4" type="video/mp4" />
-              </video>
-              <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
-              <div className="absolute bottom-0 left-0 right-0 p-4">
-                <p className="font-serif text-lg text-white">Lifestyle</p>
-              </div>
-            </div>
-
-            {/* Reflections */}
-            <div className="group relative aspect-[9/16] overflow-hidden">
-              <video
-                className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
-                muted
-                loop
-                playsInline
-                onMouseEnter={(e) => e.currentTarget.play()}
-                onMouseLeave={(e) => { e.currentTarget.pause(); e.currentTarget.currentTime = 0; }}
-              >
-                <source src="/videos/reflections.mp4" type="video/mp4" />
-              </video>
-              <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
-              <div className="absolute bottom-0 left-0 right-0 p-4">
-                <p className="font-serif text-lg text-white">Reflections</p>
-              </div>
-            </div>
-
-            {/* Beauty */}
-            <div className="group relative aspect-[9/16] overflow-hidden">
-              <video
-                className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
-                muted
-                loop
-                playsInline
-                onMouseEnter={(e) => e.currentTarget.play()}
-                onMouseLeave={(e) => { e.currentTarget.pause(); e.currentTarget.currentTime = 0; }}
-              >
-                <source src="/videos/beauty.mp4" type="video/mp4" />
-              </video>
-              <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
-              <div className="absolute bottom-0 left-0 right-0 p-4">
-                <p className="font-serif text-lg text-white">Beauty</p>
-              </div>
-            </div>
-
-            {/* Faith */}
-            <div className="group relative aspect-[9/16] overflow-hidden">
-              <video
-                className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
-                muted
-                loop
-                playsInline
-                onMouseEnter={(e) => e.currentTarget.play()}
-                onMouseLeave={(e) => { e.currentTarget.pause(); e.currentTarget.currentTime = 0; }}
-              >
-                <source src="/videos/faith-journey.mp4" type="video/mp4" />
-              </video>
-              <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
-              <div className="absolute bottom-0 left-0 right-0 p-4">
-                <p className="font-serif text-lg text-white">Faith</p>
-              </div>
-            </div>
+          <div className="mt-16">
+            <VideoGrid />
           </div>
 
           {/* Social Follow CTA */}
