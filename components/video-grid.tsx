@@ -1,26 +1,42 @@
 "use client"
 
 import { useRef } from "react"
+import Image from "next/image"
 
-interface VideoItemProps {
+interface MediaItemProps {
   src: string
   title: string
   subtitle?: string
   featured?: boolean
   badge?: string
+  isImage?: boolean
 }
 
-function VideoItem({ src, title, subtitle, featured, badge }: VideoItemProps) {
+function MediaItem({ src, title, subtitle, featured, badge, isImage }: MediaItemProps) {
   const videoRef = useRef<HTMLVideoElement>(null)
+  const playPromiseRef = useRef<Promise<void> | undefined>(undefined)
 
   const handleMouseEnter = () => {
-    videoRef.current?.play()
+    if (videoRef.current && !isImage) {
+      playPromiseRef.current = videoRef.current.play()
+      playPromiseRef.current?.catch(() => {})
+    }
   }
 
   const handleMouseLeave = () => {
-    if (videoRef.current) {
-      videoRef.current.pause()
-      videoRef.current.currentTime = 0
+    if (videoRef.current && !isImage) {
+      // Wait for play() promise to resolve before pausing
+      if (playPromiseRef.current !== undefined) {
+        playPromiseRef.current.then(() => {
+          if (videoRef.current) {
+            videoRef.current.pause()
+            videoRef.current.currentTime = 0
+          }
+        }).catch(() => {})
+      } else {
+        videoRef.current.pause()
+        videoRef.current.currentTime = 0
+      }
     }
   }
 
@@ -30,15 +46,24 @@ function VideoItem({ src, title, subtitle, featured, badge }: VideoItemProps) {
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
     >
-      <video
-        ref={videoRef}
-        className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
-        muted
-        loop
-        playsInline
-      >
-        <source src={src} type="video/mp4" />
-      </video>
+      {isImage ? (
+        <Image
+          src={src}
+          alt={title}
+          fill
+          className="object-cover transition-transform duration-700 group-hover:scale-105"
+        />
+      ) : (
+        <video
+          ref={videoRef}
+          className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
+          muted
+          loop
+          playsInline
+        >
+          <source src={src} type="video/mp4" />
+        </video>
+      )}
       <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent" />
       {badge && (
         <div className="absolute left-4 top-4 bg-accent px-3 py-1.5 text-[9px] font-medium uppercase tracking-[0.2em] text-foreground">
@@ -70,8 +95,10 @@ const videos = [
     title: "Reflections",
   },
   {
-    src: "/videos/charity.mp4",
+    src: "/images/water-wells.png",
     title: "Charity",
+    subtitle: "Water Wells Pakistan",
+    isImage: true,
   },
   {
     src: "/videos/faith-journey.mp4",
@@ -83,7 +110,7 @@ export function VideoGrid() {
   return (
     <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
       {videos.map((video) => (
-        <VideoItem key={video.src} {...video} />
+        <MediaItem key={video.src} {...video} />
       ))}
     </div>
   )

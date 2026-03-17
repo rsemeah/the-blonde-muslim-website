@@ -43,14 +43,24 @@ export function VideoFeature({
     video.addEventListener("play", handlePlay)
     video.addEventListener("pause", handlePause)
 
+    let playPromise: Promise<void> | undefined
+
     // Autoplay when in viewport
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
           if (entry.isIntersecting && autoPlay) {
-            video.play().catch(() => {})
+            playPromise = video.play()
+            playPromise?.catch(() => {})
           } else {
-            video.pause()
+            // Wait for play() promise to resolve before pausing
+            if (playPromise !== undefined) {
+              playPromise.then(() => {
+                video.pause()
+              }).catch(() => {})
+            } else {
+              video.pause()
+            }
           }
         })
       },
