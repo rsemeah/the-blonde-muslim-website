@@ -13,6 +13,7 @@ interface AminaChatProps {
 export function AminaChat({ accessCode, isWidget = false }: AminaChatProps) {
   const [input, setInput] = useState("")
   const messagesEndRef = useRef<HTMLDivElement>(null)
+  const messagesContainerRef = useRef<HTMLDivElement>(null)
   const inputRef = useRef<HTMLInputElement>(null)
   
   const { messages, sendMessage, status, setMessages } = useChat({
@@ -27,9 +28,12 @@ export function AminaChat({ accessCode, isWidget = false }: AminaChatProps) {
 
   const isLoading = status === "streaming" || status === "submitted"
 
-  // Auto-scroll to bottom when new messages arrive
+  // Auto-scroll to bottom when new messages arrive - contained within chat
   useEffect(() => {
-    messagesEndRef.current?.scrollIntoView({ behavior: "smooth" })
+    if (messagesContainerRef.current && messagesEndRef.current) {
+      const container = messagesContainerRef.current
+      container.scrollTop = container.scrollHeight
+    }
   }, [messages])
 
   // Focus input on mount
@@ -103,7 +107,7 @@ export function AminaChat({ accessCode, isWidget = false }: AminaChatProps) {
       )}
 
       {/* Messages */}
-      <div className="flex-1 overflow-y-auto p-4 space-y-4">
+      <div ref={messagesContainerRef} className="flex-1 overflow-y-auto p-4 space-y-4">
         {messages.length === 0 && (
           <div className="flex flex-col items-center justify-center h-full text-center px-4 animate-in fade-in duration-500">
             <div className="relative mb-6">
