@@ -53,7 +53,7 @@ export async function POST(req: Request) {
 
     // Validate access (simple code check - can be enhanced later)
     const accessCode = req.headers.get('x-access-code')
-    const validCodes = (process.env.AMINA_ACCESS_CODES || 'CIRCLE2024').split(',')
+    const validCodes = (process.env.AMINA_ACCESS_CODES || '1738').split(',')
     
     if (!accessCode || !validCodes.includes(accessCode.trim())) {
       return new Response(JSON.stringify({ error: 'Invalid access code' }), {
